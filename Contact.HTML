@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saha Finn — Contact Us</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B2027; --paper:#F7FAF9; --coral:#E8654C; --coral-deep:#C94E37;
+    --teal:#2E8B8B; --teal-deep:#1F6363; --line:#DCE6E3; --text:#1C2B2E;
+    --text-dim:#5A6B6D; --gold:#D9A441; --radius:14px;
+    --shadow:0 12px 28px -14px rgba(11,32,39,0.28);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--text);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-0.01em;color:var(--ink);margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  button,input,textarea{font-family:inherit;}
+  button{cursor:pointer;border:none;}
+  ::selection{background:var(--coral);color:#fff;}
+
+  /* header */
+  .site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1240px;margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo .mark{width:36px;height:36px;flex-shrink:0;}
+  .logo .word{font-family:'Fraunces',serif;font-size:21px;font-weight:700;color:var(--ink);line-height:1;}
+  .logo .word small{display:block;font-family:'Work Sans',sans-serif;font-size:10px;letter-spacing:.16em;color:var(--teal-deep);font-weight:600;text-transform:uppercase;margin-top:3px;}
+  nav.main-nav{display:flex;gap:26px;}
+  nav.main-nav a{font-size:14px;font-weight:600;color:var(--text-dim);padding-bottom:4px;border-bottom:2px solid transparent;}
+  nav.main-nav a.active,nav.main-nav a:hover{color:var(--ink);border-color:var(--coral);}
+  .header-cta{background:var(--coral);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:9px;}
+  .header-cta:hover{background:var(--coral-deep);}
+  @media (max-width:960px){nav.main-nav{display:none;}}
+
+  /* hero */
+  .page-hero{
+    background:linear-gradient(120deg,#0B2027 0%,#123a3f 60%,#1a1614 100%);
+    color:#fff;padding:56px 40px 46px;position:relative;overflow:hidden;
+  }
+  .page-hero::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(circle at 85% 20%, rgba(232,101,76,0.3), transparent 40%),
+               radial-gradient(circle at 15% 80%, rgba(46,139,139,0.3), transparent 45%);
+  }
+  .page-hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
+  .hero-eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);}
+  .page-hero h1{font-size:clamp(30px,4.4vw,46px);line-height:1.06;max-width:640px;}
+  .page-hero p{color:#cfe3e0;font-size:15.5px;margin-top:14px;max-width:560px;line-height:1.65;}
+
+  /* layout */
+  .wrap{max-width:1240px;margin:0 auto;padding:54px 40px 70px;}
+  .contact-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:start;}
+
+  /* info cards */
+  .info-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 26px 28px;box-shadow:var(--shadow);margin-bottom:20px;
+  }
+  .info-card h3{font-size:18px;margin-bottom:16px;}
+  .info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;}
+  .info-row:last-child{margin-bottom:0;}
+  .info-icon{
+    width:38px;height:38px;border-radius:9px;background:var(--paper-dim,#EDF3F1);
+    display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;
+    background:rgba(46,139,139,0.12);
+  }
+  .info-text .label{font-size:11.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:2px;}
+  .info-text .value{font-size:14.5px;color:var(--ink);font-weight:600;}
+  .info-text .value a{color:var(--teal-deep);}
+  .info-text .value a:hover{text-decoration:underline;}
+
+  .hours-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .hours-table td{padding:7px 0;border-bottom:1px dashed var(--line);}
+  .hours-table td:first-child{color:var(--text-dim);}
+  .hours-table td:last-child{text-align:right;font-weight:600;color:var(--ink);}
+  .hours-table tr:last-child td{border-bottom:none;}
+
+  .social-row{display:flex;gap:12px;flex-wrap:wrap;}
+  .social-btn{
+    display:flex;align-items:center;gap:9px;
+    border:1px solid var(--line);border-radius:10px;padding:10px 16px;
+    font-size:13.5px;font-weight:600;color:var(--ink);
+    transition:transform .15s ease, border-color .15s ease;
+  }
+  .social-btn svg{width:22px;height:22px;flex-shrink:0;}
+  .social-btn:hover{transform:translateY(-2px);}
+  .social-btn.gmail:hover{border-color:#EA4335;}
+  .social-btn.instagram:hover{border-color:#D62976;}
+  .social-btn.whatsapp:hover{border-color:#25D366;}
+
+  .whatsapp-card{
+    background:#0B2027;color:#fff;border-radius:var(--radius);padding:26px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  .whatsapp-card h3{color:#fff;font-size:17px;margin-bottom:6px;}
+  .whatsapp-card p{color:#a9c2be;font-size:13px;margin:0;max-width:280px;}
+  .wa-btn{background:#25D366;color:#08331b;font-weight:700;font-size:13.5px;padding:12px 20px;border-radius:9px;display:inline-flex;align-items:center;gap:8px;flex-shrink:0;}
+  .wa-btn:hover{background:#1fbd5b;}
+
+  /* form */
+  .form-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px;box-shadow:var(--shadow);
+  }
+  .form-card h3{font-size:19px;margin-bottom:6px;}
+  .form-card .sub{color:var(--text-dim);font-size:13.5px;margin-bottom:22px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form-field{margin-bottom:16px;}
+  .form-field.full{grid-column:1/-1;}
+  .form-field label{display:block;font-size:12.5px;font-weight:600;color:var(--text-dim);margin-bottom:6px;}
+  .form-field input,.form-field select,.form-field textarea{
+    width:100%;border:1px solid var(--line);border-radius:9px;padding:11px 13px;
+    font-size:14px;color:var(--text);background:var(--paper);outline:none;
+  }
+  .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--teal);background:#fff;}
+  .form-field textarea{resize:vertical;min-height:100px;}
+  .submit-btn{
+    width:100%;background:var(--coral);color:#fff;font-weight:700;font-size:14.5px;
+    padding:14px;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px;
+  }
+  .submit-btn:hover{background:var(--coral-deep);}
+  .form-note{font-size:11.5px;color:var(--text-dim);text-align:center;margin-top:12px;}
+
+  @media (max-width:900px){
+    .contact-layout{grid-template-columns:1fr;}
+    .form-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .site-header{padding:16px 20px;}
+    .page-hero{padding:44px 20px 34px;}
+    .wrap{padding:36px 20px 50px;}
+    .form-card{padding:22px;}
+  }
+
+  footer{background:var(--ink);color:#9fb8b4;padding:30px 40px;text-align:center;font-size:13px;}
+  footer a{color:#7fd9b0;font-weight:600;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline:2px solid var(--coral);outline-offset:2px;}
+
+  /* ---------- mobile hamburger + slide-in menu ---------- */
+  .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:transparent;border:none;cursor:pointer;z-index:1002;position:relative;}
+  .menu-toggle span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease;}
+  .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-toggle.active span:nth-child(2){opacity:0;}
+  .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-nav-overlay{position:fixed;inset:0;background:rgba(11,32,39,0.55);opacity:0;visibility:hidden;transition:opacity .35s ease;z-index:1000;}
+  .mobile-nav-overlay.active{opacity:1;visibility:visible;}
+  .mobile-nav-panel{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;background:#fff;z-index:1001;box-shadow:-14px 0 40px rgba(11,32,39,.28);transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:100px 32px 32px;overflow-y:auto;}
+  .mobile-nav-panel.active{transform:translateX(0);}
+  .mobile-nav-panel a{display:block;padding:15px 0;font-size:17px;font-weight:600;color:var(--text);border-bottom:1px solid var(--line);opacity:0;transform:translateX(16px);transition:opacity .4s ease,transform .4s ease;}
+  .mobile-nav-panel.active a{opacity:1;transform:translateX(0);}
+  .mobile-nav-panel a:nth-child(1){transition-delay:.08s;} .mobile-nav-panel a:nth-child(2){transition-delay:.12s;}
+  .mobile-nav-panel a:nth-child(3){transition-delay:.16s;} .mobile-nav-panel a:nth-child(4){transition-delay:.20s;}
+  .mobile-nav-panel a:nth-child(5){transition-delay:.24s;} .mobile-nav-panel a:nth-child(6){transition-delay:.28s;}
+  .mobile-nav-panel a:nth-child(7){transition-delay:.32s;}
+  .mobile-nav-panel a.active,.mobile-nav-panel a:hover{color:var(--coral);}
+  .mobile-nav-panel .mobile-cta{margin-top:22px;background:var(--coral);color:#fff !important;text-align:center;padding:15px;border-radius:10px;font-weight:700;border-bottom:none;}
+  body.nav-open{overflow:hidden;}
+  @media (max-width:900px){.menu-toggle{display:flex;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">
+    <svg class="mark" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="20" fill="#0B2027"/>
+      <path d="M8 20 Q20 10 32 20 Q20 30 8 20 Z" fill="#E8654C"/>
+      <path d="M32 20 L37 15 L37 25 Z" fill="#C94E37"/>
+      <circle cx="13" cy="18" r="1.6" fill="#0B2027"/>
+    </svg>
+    <div class="word">Saha Finn<small>Fresh Fish & Meat</small></div>
+  </div>
+  <nav class="main-nav">
+    <a href="product.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="order.html">Order Now</a>
+    <a href="Fish.html">Fish</a>
+    <a href="chicken.html">Chicken</a>
+    <a href="mutton.html">Mutton</a>
+    <a href="Contact.html" class="active">Contact</a>
+  </nav>
+  <a class="header-cta" href="order.html">Order Now</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<nav class="mobile-nav-panel" id="mobileNavPanel">
+  <a href="product.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="order.html">Order Now</a>
+  <a href="Fish.html">Fish</a>
+  <a href="chicken.html">Chicken</a>
+  <a href="mutton.html">Mutton</a>
+  <a href="Contact.html" class="active">Contact</a>
+  <a href="order.html" class="mobile-cta">Order Now</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Get In Touch</div>
+    <h1>We'd Love to Hear From You</h1>
+    <p>Questions about an order, bulk requests, or feedback on your last delivery — reach us however's easiest for you.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="contact-layout">
+
+    <!-- LEFT: Info -->
+    <div>
+      <div class="info-card">
+        <h3>Contact Details</h3>
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <div class="label">Delivery Area</div>
+            <div class="value">Koramangala & nearby, Bangalore</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📞</div>
+          <div class="info-text">
+            <div class="label">Phone</div>
+            <div class="value"><a href="tel:+918431083956">+91 84310 83956</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">💬</div>
+          <div class="info-text">
+            <div class="label">WhatsApp</div>
+            <div class="value"><a href="https://wa.me/918431083956" target="_blank" rel="noopener">Chat with us</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">✉️</div>
+          <div class="info-text">
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:hello@fisshemart.com">hello@fisshemart.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>Connect With Us</h3>
+        <div class="social-row">
+          <a class="social-btn gmail" href="mailto:hello@fisshemart.com" aria-label="Email us on Gmail">
+            <svg viewBox="0 0 24 24"><path fill="#EA4335" d="M12 12.7 2.4 5.6C2.7 4.7 3.5 4 4.5 4h15c1 0 1.8.7 2.1 1.6L12 12.7Z"/><path fill="#FFFFFF" d="M2.1 6.4 12 13.9l9.9-7.5c.06.2.1.4.1.6v10.5c0 1.1-.9 2-2 2h-.5V9.1L12 15.9 5.5 9.1V19.5H5c-1.1 0-2-.9-2-2V7c0-.2.04-.4.1-.6Z"/></svg>
+            <span>Gmail</span>
+          </a>
+          <a class="social-btn instagram" href="https://instagram.com/fisshemart" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="6" fill="url(#igGrad)"/><defs><linearGradient id="igGrad" x1="0" y1="24" x2="24" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset="0.35" stop-color="#D62976"/><stop offset="0.7" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.15" fill="#fff"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="social-btn whatsapp" href="https://wa.me/918431083956" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="#25D366"/><path fill="#fff" d="M16.7 13.9c-.3-.15-1.6-.8-1.8-.9-.25-.1-.4-.15-.6.15-.2.3-.7.9-.85 1.05-.15.15-.3.17-.6.05-.3-.15-1.2-.45-2.3-1.4-.85-.75-1.4-1.7-1.6-2-.15-.3 0-.45.15-.6.15-.15.3-.35.45-.5.15-.15.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.6-1.45-.8-2-.2-.5-.45-.45-.6-.45h-.5c-.2 0-.5.05-.75.35-.25.3-1 .95-1 2.3 0 1.35 1 2.65 1.15 2.85.15.2 1.95 3 4.75 4.15.65.3 1.2.45 1.6.55.7.2 1.3.15 1.8.1.55-.1 1.6-.65 1.85-1.3.2-.6.2-1.15.15-1.3-.05-.15-.2-.2-.45-.35Z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>Working Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday – Saturday</td><td>7:00am – 9:00pm</td></tr>
+          <tr><td>Sunday</td><td>7:00am – 9:00pm</td></tr>
+          <tr><td>Order cut-off (same-day)</td><td>6:00pm</td></tr>
+        </table>
+      </div>
+
+      <div class="whatsapp-card">
+        <div>
+          <h3>Prefer to just chat?</h3>
+          <p>Skip the form and message us directly on WhatsApp — usually the fastest way to reach us.</p>
+        </div>
+        <a class="wa-btn" href="https://wa.me/918431083956" target="_blank" rel="noopener">💬 Open WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="form-card">
+      <h3>Send Us a Message</h3>
+      <div class="sub">Fill this in and we'll open WhatsApp with your message pre-filled — just hit send.</div>
+
+      <form id="contactForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="cf-name">Full Name</label>
+            <input type="text" id="cf-name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="cf-phone">Phone Number</label>
+            <input type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="cf-topic">What's this about?</label>
+          <select id="cf-topic">
+            <option>Order enquiry</option>
+            <option>Bulk / party order</option>
+            <option>Delivery issue</option>
+            <option>Feedback</option>
+            <option>Something else</option>
+          </select>
+        </div>
+
+        <div class="form-field full">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" placeholder="Tell us what you need..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">💬 Send via WhatsApp</button>
+        <div class="form-note">We'll get back to you as quickly as we can, usually within the hour during working hours.</div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Saha Finn — Fresh, honest, and on time, every order. &nbsp;·&nbsp;
+  <a href="https://wa.me/918431083956" target="_blank" rel="noopener">Chat on WhatsApp</a>
+</footer>
+
+<script>
+  const WHATSAPP_NUMBER = "918431083956";
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("cf-name").value.trim();
+    const phone = document.getElementById("cf-phone").value.trim();
+    const topic = document.getElementById("cf-topic").value;
+    const message = document.getElementById("cf-message").value.trim();
+
+    const text =
+      `Hi Saha Finn! I'd like to get in touch.%0A%0A` +
+      `Name: ${name}%0A` +
+      `Phone: ${phone}%0A` +
+      `Topic: ${topic}%0A` +
+      `Message: ${message}`;
+
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+  });
+</script>
+
+<script>
+(function(){
+  const toggle=document.getElementById('menuToggle');
+  const overlay=document.getElementById('mobileNavOverlay');
+  const panel=document.getElementById('mobileNavPanel');
+  if(!toggle||!overlay||!panel) return;
+  function closeMenu(){
+    toggle.classList.remove('active');
+    overlay.classList.remove('active');
+    panel.classList.remove('active');
+    document.body.classList.remove('nav-open');
+  }
+  function openMenu(){
+    toggle.classList.add('active');
+    overlay.classList.add('active');
+    panel.classList.add('active');
+    document.body.classList.add('nav-open');
+  }
+  toggle.addEventListener('click',()=>{
+    panel.classList.contains('active') ? closeMenu() : openMenu();
+  });
+  overlay.addEventListener('click',closeMenu);
+  panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+})();
+</script>
+
+</body>
+</html>

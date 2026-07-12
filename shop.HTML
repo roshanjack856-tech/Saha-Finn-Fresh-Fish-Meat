@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Saha Finn</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f8f8f8;
+color:#222;
+}
+
+a{
+text-decoration:none;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#fff;
+box-shadow:0 3px 15px rgba(0,0,0,.08);
+z-index:999;
+}
+
+nav{
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:#0E9F6E;
+}
+
+.logo span{
+color:#ff5a1f;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+color:#333;
+font-weight:500;
+}
+
+.btn{
+padding:12px 25px;
+background:#ff5a1f;
+color:#fff;
+border-radius:40px;
+}
+
+.hero{
+height:45vh;
+margin-top:80px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:#fff;
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1544943910-4c1dc44aab44?auto=format&fit=crop&w=1600&q=80") center/cover;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:18px;
+}
+
+.search-box{
+padding:60px 0 30px;
+}
+
+.search{
+display:flex;
+gap:15px;
+}
+
+.search input{
+flex:1;
+padding:15px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:16px;
+}
+
+.search button{
+padding:15px 30px;
+border:none;
+background:#ff5a1f;
+color:#fff;
+border-radius:8px;
+cursor:pointer;
+}
+
+.category{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.category button{
+padding:10px 22px;
+border:none;
+background:#fff;
+border-radius:30px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+padding-bottom:80px;
+}
+
+.card{
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.content{
+padding:20px;
+}
+
+.content h3{
+margin-bottom:10px;
+}
+
+.price{
+font-size:22px;
+font-weight:700;
+color:#0E9F6E;
+margin:12px 0;
+}
+
+.buttons{
+display:flex;
+gap:10px;
+}
+
+.buttons button{
+flex:1;
+padding:12px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+.cart{
+background:#ff5a1f;
+color:#fff;
+}
+
+.wish{
+background:#0E9F6E;
+color:#fff;
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.search{
+flex-direction:column;
+}
+
+}
+
+/* ---------- mobile hamburger + slide-in menu ---------- */
+.menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:transparent;border:none;cursor:pointer;z-index:1002;position:relative;}
+.menu-toggle span{width:24px;height:2px;background:#222;border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease;}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:opacity .35s ease;z-index:1000;}
+.mobile-nav-overlay.active{opacity:1;visibility:visible;}
+.mobile-nav-panel{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;background:#fff;z-index:1001;box-shadow:-14px 0 40px rgba(0,0,0,.28);transform:translateX(100%);transition:transform .42s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:100px 32px 32px;overflow-y:auto;}
+.mobile-nav-panel.active{transform:translateX(0);}
+.mobile-nav-panel a{display:block;padding:15px 0;font-size:17px;font-weight:600;color:#222;border-bottom:1px solid #eee;opacity:0;transform:translateX(16px);transition:opacity .4s ease,transform .4s ease;}
+.mobile-nav-panel.active a{opacity:1;transform:translateX(0);}
+.mobile-nav-panel a:nth-child(1){transition-delay:.08s;} .mobile-nav-panel a:nth-child(2){transition-delay:.12s;}
+.mobile-nav-panel a:nth-child(3){transition-delay:.16s;} .mobile-nav-panel a:nth-child(4){transition-delay:.20s;}
+.mobile-nav-panel a:nth-child(5){transition-delay:.24s;} .mobile-nav-panel a:nth-child(6){transition-delay:.28s;}
+.mobile-nav-panel a:nth-child(7){transition-delay:.32s;}
+.mobile-nav-panel a.active,.mobile-nav-panel a:hover{color:#ff5a1f;}
+.mobile-nav-panel .mobile-cta{margin-top:22px;background:#ff5a1f;color:#fff !important;text-align:center;padding:15px;border-radius:10px;font-weight:700;border-bottom:none;}
+body.nav-open{overflow:hidden;}
+@media (max-width:768px){.menu-toggle{display:flex;}}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">Saha<span>Finn</span></div>
+
+<ul>
+
+<li><a href="product.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="order.html">Order Now</a></li>
+<li><a href="Fish.html">Fish</a></li>
+<li><a href="chicken.html">Chicken</a></li>
+<li><a href="mutton.html">Mutton</a></li>
+<li><a href="Contact.html">Contact</a></li>
+
+</ul>
+
+<a href="order.html" class="btn">Order Now</a>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+
+</nav>
+
+</div>
+
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<nav class="mobile-nav-panel" id="mobileNavPanel">
+  <a href="product.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="order.html">Order Now</a>
+  <a href="Fish.html">Fish</a>
+  <a href="chicken.html">Chicken</a>
+  <a href="mutton.html">Mutton</a>
+  <a href="Contact.html">Contact</a>
+  <a href="order.html" class="mobile-cta">Order Now</a>
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>Fresh Meat & Seafood Shop</h1>
+
+<p>Choose your favourite fresh products</p>
+
+</div>
+
+</section>
+
+<section class="search-box">
+
+<div class="container">
+
+<div class="search">
+
+<input type="text" placeholder="Search products...">
+
+<button><i class="fa-solid fa-search"></i> Search</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="category">
+
+<button>All</button>
+<button>🐟 Fish</button>
+<button>🍗 Chicken</button>
+<button>🥩 Mutton</button>
+<button>🦐 Seafood</button>
+
+</div>
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80">
+
+<div class="content">
+
+<h3>Fresh Salmon</h3>
+
+<p>Premium ocean fresh salmon.</p>
+
+<div class="price">₹499/kg</div>
+
+<div class="buttons">
+
+<button class="cart">Add Cart</button>
+
+<button class="wish"><i class="fa-regular fa-heart"></i></button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
+
+<div class="content">
+
+<h3>Fresh Chicken</h3>
+
+<p>Farm fresh cleaned chicken.</p>
+
+<div class="price">₹299/kg</div>
+
+<div class="buttons">
+
+<button class="cart">Add Cart</button>
+
+<button class="wish"><i class="fa-regular fa-heart"></i></button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=800&q=80">
+
+<div class="content">
+
+<h3>Mutton Curry Cut</h3>
+
+<p>Fresh premium goat meat.</p>
+
+<div class="price">₹899/kg</div>
+
+<div class="buttons">
+
+<button class="cart">Add Cart</button>
+
+<button class="wish"><i class="fa-regular fa-heart"></i></button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer style="background:#111;color:#ccc;padding:60px 0;text-align:center;">
+
+<div class="container">
+
+<h3 style="color:#fff;font-size:28px;margin-bottom:15px;">Saha Finn</h3>
+
+<p>Behind the Meat Story</p>
+
+<p>Fresh fish and meat, delivered with trust and freshness.</p>
+
+<p><strong>📞 +91 84310 83956</strong></p>
+
+<p style="margin-top:15px;">© 2026 Saha Finn. All Rights Reserved.</p>
+
+</div>
+
+</footer>
+
+<script>
+(function(){
+  const toggle=document.getElementById('menuToggle');
+  const overlay=document.getElementById('mobileNavOverlay');
+  const panel=document.getElementById('mobileNavPanel');
+  if(!toggle||!overlay||!panel) return;
+  function closeMenu(){
+    toggle.classList.remove('active');
+    overlay.classList.remove('active');
+    panel.classList.remove('active');
+    document.body.classList.remove('nav-open');
+  }
+  function openMenu(){
+    toggle.classList.add('active');
+    overlay.classList.add('active');
+    panel.classList.add('active');
+    document.body.classList.add('nav-open');
+  }
+  toggle.addEventListener('click',()=>{
+    panel.classList.contains('active') ? closeMenu() : openMenu();
+  });
+  overlay.addEventListener('click',closeMenu);
+  panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+})();
+</script>
+
+</body>
+</html>
