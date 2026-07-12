@@ -483,9 +483,15 @@ body.nav-open{overflow:hidden;}
 
 <section class="hero">
 
+<div class="hero-slides">
+<div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&w=1600&q=80');"></div>
+</div>
+
 <div class="container">
 
 <div class="hero-content">
+
+<span class="hero-eyebrow">Saha Finn</span>
 
 <h1>Fresh Fish & Meat Delivered To Your Doorstep</h1>
 
@@ -677,11 +683,11 @@ window.addEventListener("scroll",function(){
 
 if(window.scrollY>50){
 
-header.style.background="#fff";
+header.classList.add("scrolled");
 
 }else{
 
-header.style.background="#fff";
+header.classList.remove("scrolled");
 
 }
 
