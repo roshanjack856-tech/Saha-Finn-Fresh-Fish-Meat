@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Saha Finn — 50 Fish Varieties</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -132,23 +133,49 @@
   .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .menu-toggle.active span:nth-child(2){opacity:0;}
   .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-  .mobile-nav-overlay{position:fixed;inset:0;background:rgba(4,10,12,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .35s ease;z-index:1000;}
+  .mobile-nav-overlay{position:fixed;inset:0;background:rgba(3,10,12,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .4s ease;z-index:1000;}
 .mobile-nav-overlay.active{opacity:1;visibility:visible;}
-.mobile-nav-panel{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:84%;max-width:340px;background:radial-gradient(circle at 88% 6%, rgba(46,139,139,.55), transparent 40%),radial-gradient(circle at 105% 60%, rgba(232,101,76,.5), transparent 45%),radial-gradient(circle at -5% 100%, rgba(217,164,65,.32), transparent 48%),linear-gradient(165deg, rgba(9,22,26,.95) 0%, rgba(6,15,18,.97) 100%);backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);border-left:1px solid rgba(255,255,255,.08);z-index:1001;box-shadow:-20px 0 60px rgba(0,0,0,.5);transform:translateX(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:20px 20px 16px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;box-sizing:border-box;font-family:'Poppins','Work Sans',sans-serif;}
+.mobile-nav-panel{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:360px;max-width:100%;background:radial-gradient(circle at 85% 8%, rgba(242,106,61,.35), transparent 42%),radial-gradient(circle at 105% 65%, rgba(46,139,139,.30), transparent 48%),radial-gradient(circle at -10% 100%, rgba(217,164,65,.22), transparent 50%),linear-gradient(165deg, #0D3D46 0%, #071F24 100%);backdrop-filter:blur(30px) saturate(160%);-webkit-backdrop-filter:blur(30px) saturate(160%);border-left:1px solid rgba(255,255,255,.08);border-top-left-radius:30px;border-bottom-left-radius:30px;z-index:1001;box-shadow:-24px 0 70px rgba(0,0,0,.55);transform:translateX(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:24px 20px 20px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;box-sizing:border-box;font-family:'Poppins','Outfit',sans-serif;}
 .mobile-nav-panel.active{transform:translateX(0);}
-.mnp-head{display:flex;align-items:center;gap:10px;padding-bottom:12px;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.14);flex-shrink:0;}
-.mnp-head .mnp-mark{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
-.mnp-head .mnp-name{color:#fff;font-weight:700;font-size:16px;line-height:1.2;}
-.mnp-head .mnp-tag{color:#a9d2cc;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:2px;}
-.mnp-label{color:#E3A64A;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:8px 4px 0;flex-shrink:0;}
-.mobile-nav-panel a{display:flex;align-items:center;gap:11px;padding:8px 6px;font-size:14.5px;font-weight:600;color:#eef5f3;border-bottom:none;opacity:0;transform:translateX(14px);transition:opacity .4s ease,transform .4s ease,background .2s ease,color .2s ease;border-radius:9px;flex-shrink:0;}
-.mobile-nav-panel.active a{opacity:1;transform:translateX(0);}
-.mobile-nav-panel a .mnp-ico{width:20px;text-align:center;font-size:14px;flex-shrink:0;}
-.mobile-nav-panel a.sub{font-size:13px;font-weight:500;color:#c3d8d4;padding:7px 6px;}
-.mobile-nav-panel a.active,.mobile-nav-panel a:hover{background:rgba(255,255,255,.09);color:#FF8A61;}
-.mobile-nav-panel .mobile-cta{margin-top:14px;flex-shrink:0;background:linear-gradient(120deg,#E8654C,#C94E37);color:#fff !important;text-align:center;justify-content:center;padding:13px;border-radius:12px;font-weight:700;box-shadow:0 12px 26px rgba(232,101,76,.35);}
-  body.nav-open{overflow:hidden;}
-  @media (max-width:900px){.menu-toggle{display:flex;}}
+@media(max-width:420px){.mobile-nav-panel{width:100%;border-top-left-radius:0;border-bottom-left-radius:0;}}
+.mnp-topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0;}
+.mnp-brand{display:flex;align-items:center;gap:12px;min-width:0;}
+.mnp-logo{width:52px;height:52px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 30%, rgba(242,106,61,.35), rgba(255,255,255,.05));border:2px solid rgba(242,106,61,.55);box-shadow:0 0 0 4px rgba(242,106,61,.12),0 0 20px rgba(242,106,61,.35);color:#fff;font-size:20px;}
+.mnp-brand-text{min-width:0;}
+.mnp-brand-name{color:#fff;font-weight:800;font-size:17px;letter-spacing:.02em;line-height:1.15;white-space:nowrap;}
+.mnp-brand-tag{color:#a9d2cc;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-top:3px;font-weight:600;}
+.mnp-close{width:38px;height:38px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:16px;cursor:pointer;transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s ease,border-color .2s ease,color .2s ease;}
+.mnp-close:hover{background:rgba(242,106,61,.22);border-color:#F26A3D;color:#F26A3D;transform:rotate(90deg);}
+.mnp-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);margin:18px 0 10px;flex-shrink:0;}
+.mnp-links{display:flex;flex-direction:column;gap:4px;overflow-y:auto;padding-right:2px;}
+.mnp-cat-label{color:#E3A64A;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin:14px 6px 2px;flex-shrink:0;}
+.mnp-link{position:relative;display:flex;align-items:center;gap:14px;height:52px;padding:0 14px;border-radius:14px;color:#f2f7f6;font-weight:500;font-size:15px;opacity:0;transform:translateX(18px);transition:opacity .45s ease,transform .45s ease,background .25s ease,padding-left .25s ease;flex-shrink:0;text-decoration:none;}
+.mobile-nav-panel.active .mnp-link{opacity:1;transform:translateX(0);}
+.mnp-link .mnp-link-icon{width:34px;height:34px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);color:#cfe4e0;font-size:15px;transition:background .25s ease,color .25s ease;}
+.mnp-link:hover{background:rgba(255,255,255,.09);padding-left:22px;}
+.mnp-link:hover .mnp-link-icon{color:#FF8A61;}
+.mnp-link.active{background:rgba(242,106,61,.14);}
+.mnp-link.active::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:4px;border-radius:4px;background:linear-gradient(180deg,#F26A3D,#E3A64A);}
+.mnp-link.active .mnp-link-icon{background:rgba(242,106,61,.22);color:#FF8A61;}
+.mnp-sub{height:46px;font-size:14px;}
+.mnp-sub .mnp-link-icon{width:30px;height:30px;font-size:13px;}
+.mnp-links .mnp-link:nth-child(1){transition-delay:.04s;}
+.mnp-links .mnp-link:nth-child(2){transition-delay:.08s;}
+.mnp-links .mnp-link:nth-child(3){transition-delay:.12s;}
+.mnp-links .mnp-link:nth-child(4){transition-delay:.16s;}
+.mnp-links .mnp-link:nth-child(5){transition-delay:.20s;}
+.mnp-links .mnp-link:nth-child(6){transition-delay:.24s;}
+.mnp-links .mnp-link:nth-child(8){transition-delay:.28s;}
+.mnp-links .mnp-link:nth-child(9){transition-delay:.32s;}
+.mnp-links .mnp-link:nth-child(10){transition-delay:.36s;}
+.mnp-links .mnp-link:nth-child(11){transition-delay:.40s;}
+.mnp-cta{position:relative;overflow:hidden;margin-top:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:16px;background:linear-gradient(120deg,#F26A3D,#C94E37);color:#fff !important;font-weight:700;font-size:15.5px;text-decoration:none;box-shadow:0 14px 30px rgba(242,106,61,.4);transition:transform .25s ease,box-shadow .25s ease;}
+.mnp-cta:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(242,106,61,.5);}
+.mnp-cta i{font-size:16px;}
+.mnp-cta .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:mnp-ripple .6s linear;pointer-events:none;}
+@keyframes mnp-ripple{to{transform:scale(3);opacity:0;}}
+body.nav-open{overflow:hidden;}
+@media (max-width:900px){.menu-toggle{display:flex;}}
 </style>
 </head>
 <body>
@@ -178,20 +205,32 @@
 </header>
 
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-<nav class="mobile-nav-panel" id="mobileNavPanel">
-  <div class="mnp-head"><div class="mnp-mark">🐟</div><div><div class="mnp-name">Saha Finn</div><div class="mnp-tag">Fresh Fish & Meat</div></div></div>
-  <a href="index.html"><span class="mnp-ico">🏠</span>Home</a>
-  <a href="about.html"><span class="mnp-ico">ℹ️</span>About Us</a>
-  <a href="product.html"><span class="mnp-ico">🛒</span>Products</a>
-  <a href="shop.html"><span class="mnp-ico">🛍️</span>Shop</a>
-  <a href="sarvices.html"><span class="mnp-ico">🧰</span>Services</a>
-  <a href="Contact.html"><span class="mnp-ico">✉️</span>Contact</a>
-  <div class="mnp-label">Our Products</div>
-  <a href="Fish.html" class="active sub"><span class="mnp-ico">🐟</span>Fish</a>
-  <a href="chicken.html" class="sub"><span class="mnp-ico">🍗</span>Chicken</a>
-  <a href="mutton.html" class="sub"><span class="mnp-ico">🥩</span>Mutton</a>
-  <a href="varieties.html" class="sub"><span class="mnp-ico">🎣</span>Varieties</a>
-  <a href="order.html" class="mobile-cta"><span class="mnp-ico">📦</span>Order Now</a>
+<nav class="mobile-nav-panel" id="mobileNavPanel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <div class="mnp-topbar">
+    <div class="mnp-brand">
+      <div class="mnp-logo"><i class="fa-solid fa-fish"></i></div>
+      <div class="mnp-brand-text">
+        <div class="mnp-brand-name">SAHA FINN</div>
+        <div class="mnp-brand-tag">Fresh Fish & Meat</div>
+      </div>
+    </div>
+    <button class="mnp-close" id="mnpClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div class="mnp-divider"></div>
+  <div class="mnp-links">
+  <a href="index.html" class="mnp-link"><span class="mnp-link-icon"><i class="fa-solid fa-house"></i></span>Home</a>
+  <a href="about.html" class="mnp-link"><span class="mnp-link-icon"><i class="fa-solid fa-circle-info"></i></span>About Us</a>
+  <a href="product.html" class="mnp-link"><span class="mnp-link-icon"><i class="fa-solid fa-basket-shopping"></i></span>Products</a>
+  <a href="shop.html" class="mnp-link"><span class="mnp-link-icon"><i class="fa-solid fa-store"></i></span>Shop</a>
+  <a href="sarvices.html" class="mnp-link"><span class="mnp-link-icon"><i class="fa-solid fa-briefcase"></i></span>Services</a>
+  <a href="Contact.html" class="mnp-link"><span class="mnp-link-icon"><i class="fa-solid fa-envelope"></i></span>Contact</a>
+    <div class="mnp-cat-label">Our Products</div>
+  <a href="Fish.html" class="mnp-link mnp-sub active"><span class="mnp-link-icon"><i class="fa-solid fa-fish"></i></span>Fish</a>
+  <a href="chicken.html" class="mnp-link mnp-sub"><span class="mnp-link-icon"><i class="fa-solid fa-drumstick-bite"></i></span>Chicken</a>
+  <a href="mutton.html" class="mnp-link mnp-sub"><span class="mnp-link-icon"><i class="fa-solid fa-bone"></i></span>Mutton</a>
+  <a href="varieties.html" class="mnp-link mnp-sub"><span class="mnp-link-icon"><i class="fa-solid fa-shrimp"></i></span>Varieties</a>
+  </div>
+  <a href="order.html" class="mnp-cta"><i class="fa-solid fa-bag-shopping"></i><span>Order Now</span></a>
 </nav>
 
 <section class="page-hero">
@@ -365,28 +404,45 @@
 
 <script>
 (function(){
-  const toggle=document.getElementById('menuToggle');
-  const overlay=document.getElementById('mobileNavOverlay');
-  const panel=document.getElementById('mobileNavPanel');
-  if(!toggle||!overlay||!panel) return;
-  function closeMenu(){
-    toggle.classList.remove('active');
-    overlay.classList.remove('active');
-    panel.classList.remove('active');
-    document.body.classList.remove('nav-open');
-  }
-  function openMenu(){
-    toggle.classList.add('active');
-    overlay.classList.add('active');
-    panel.classList.add('active');
-    document.body.classList.add('nav-open');
-  }
-  toggle.addEventListener('click',()=>{
-    panel.classList.contains('active') ? closeMenu() : openMenu();
-  });
-  overlay.addEventListener('click',closeMenu);
-  panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+      const toggle = document.getElementById('menuToggle');
+    const overlay = document.getElementById('mobileNavOverlay');
+    const panel = document.getElementById('mobileNavPanel');
+    const closeBtn = document.getElementById('mnpClose');
+    if (toggle && overlay && panel) {
+      function closeMenu(){
+        toggle.classList.remove('active');
+        overlay.classList.remove('active');
+        panel.classList.remove('active');
+        document.body.classList.remove('nav-open');
+      }
+      function openMenu(){
+        toggle.classList.add('active');
+        overlay.classList.add('active');
+        panel.classList.add('active');
+        document.body.classList.add('nav-open');
+      }
+      toggle.addEventListener('click', () => {
+        panel.classList.contains('active') ? closeMenu() : openMenu();
+      });
+      overlay.addEventListener('click', closeMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+      const cta = panel.querySelector('.mnp-cta');
+      if (cta) {
+        cta.addEventListener('click', function(e){
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const ripple = document.createElement('span');
+          ripple.className = 'ripple';
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+          ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+          this.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 650);
+        });
+      }
+    }
 })();
 </script>
 
