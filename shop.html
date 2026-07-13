@@ -206,10 +206,6 @@ color:#fff;
 
 @media(max-width:768px){
 
-nav ul{
-display:none;
-}
-
 .hero h1{
 font-size:36px;
 }
@@ -219,6 +215,8 @@ flex-direction:column;
 }
 
 }
+
+@media (max-width:900px){nav ul{display:none;}}
 
 /* ---------- mobile hamburger + slide-in menu ---------- */
 .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:transparent;border:none;cursor:pointer;z-index:1002;position:relative;}
@@ -242,7 +240,7 @@ flex-direction:column;
 .mobile-nav-panel a.active,.mobile-nav-panel a:hover{background:rgba(255,255,255,.09);color:#FF8A61;}
 .mobile-nav-panel .mobile-cta{margin-top:14px;flex-shrink:0;background:linear-gradient(120deg,#E8654C,#C94E37);color:#fff !important;text-align:center;justify-content:center;padding:13px;border-radius:12px;font-weight:700;box-shadow:0 12px 26px rgba(232,101,76,.35);}
 body.nav-open{overflow:hidden;}
-@media (max-width:768px){.menu-toggle{display:flex;}}
+@media (max-width:900px){.menu-toggle{display:flex;}}
 
 </style>
 
@@ -260,8 +258,9 @@ body.nav-open{overflow:hidden;}
 
 <ul>
 
-<li><a href="product.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
 <li><a href="about.html">About Us</a></li>
+<li><a href="product.html">Products</a></li>
 <li><a href="order.html">Order Now</a></li>
 <li><a href="Fish.html">Fish</a></li>
 <li><a href="chicken.html">Chicken</a></li>
@@ -283,8 +282,9 @@ body.nav-open{overflow:hidden;}
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 <nav class="mobile-nav-panel" id="mobileNavPanel">
   <div class="mnp-head"><div class="mnp-mark">🐟</div><div><div class="mnp-name">Saha Finn</div><div class="mnp-tag">Fresh Fish & Meat</div></div></div>
-  <a href="product.html"><span class="mnp-ico">🏠</span>Home</a>
+  <a href="index.html"><span class="mnp-ico">🏠</span>Home</a>
   <a href="about.html"><span class="mnp-ico">ℹ️</span>About Us</a>
+  <a href="product.html"><span class="mnp-ico">🛒</span>Products</a>
   <a href="shop.html" class="active"><span class="mnp-ico">🛍️</span>Shop</a>
   <a href="sarvices.html"><span class="mnp-ico">🧰</span>Services</a>
   <a href="Contact.html"><span class="mnp-ico">✉️</span>Contact</a>
