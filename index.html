@@ -1,23 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saha Finn - Fresh Fish & Meat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Unbounded', sans-serif;
+}
+body{
+background:#fafafa;
+color:#222;
+}
+a{
+text-decoration:none;
+}
+p{
+font-weight:300;
+}
+img{
+width:100%;
+display:block;
+}
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+/* Display font for headings / logo */
+.logo,
+.hero h1,
+.title h2,
+.story h2,
+.card h3,
+.feature h3,
+footer h3{
+font-family:'Clash Display', 'Poppins', sans-serif;
+}
+/* Navbar */
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:transparent;
+box-shadow:none;
+z-index:999;
+transition:background .35s ease, box-shadow .35s ease;
+}
+header.scrolled{
+background:#fff;
+box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+nav{
+height:86px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:24px;
+}
+.logo{
+font-size:30px;
+font-weight:700;
+color:#fff;
+transition:color .3s ease;
+white-space:nowrap;
+}
+header.scrolled .logo{
+color:#0E9F6E;
+}
+.logo span{
+color:#ff5a1f;
+}
+nav ul{
+display:flex;
+gap:32px;
+list-style:none;
+}
+nav ul li a{
+color:#fff;
+font-weight:600;
+font-size:14px;
+letter-spacing:.03em;
+text-transform:uppercase;
+transition:.3s;
+}
+header.scrolled nav ul li a{
+color:#333;
+}
+nav ul li a:hover{
+color:#ff5a1f;
+}
+.nav-right{
+display:flex;
+align-items:center;
+gap:22px;
+}
+.call-info{
+display:flex;
+align-items:center;
+gap:8px;
+color:#fff;
+font-size:13.5px;
+font-weight:600;
+letter-spacing:.02em;
+white-space:nowrap;
+transition:color .3s ease;
+}
+.call-info b{
+font-weight:800;
+}
+header.scrolled .call-info{
+color:#333;
+}
+.btn{
+background:#e63946;
+color:#fff;
+padding:12px 25px;
+border-radius:40px;
+font-weight:600;
+white-space:nowrap;
+transition:background .3s ease;
+}
+.btn:hover{
+background:#c92a37;
+}
+/* Hero */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
+.hero-slides{
+position:absolute;
+inset:0;
+z-index:0;
+}
+.hero-slide{
+position:absolute;
+inset:0;
+background-size:cover;
+background-position:center;
+opacity:0;
+transition:opacity 1.4s ease;
+}
+.hero-slide.active{
+opacity:1;
+}
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(100deg, rgba(0,0,0,.72) 30%, rgba(0,0,0,.4) 100%);
+z-index:1;
+}
+.hero-content{
+position:relative;
+z-index:2;
+color:#fff;
+max-width:650px;
+}
+.hero-eyebrow{
+display:inline-block;
+font-size:13px;
+font-weight:700;
+letter-spacing:.2em;
+text-transform:uppercase;
+color:#ff5a1f;
+margin-bottom:18px;
+}
+.hero h1{
+font-size:58px;
+line-height:1.2;
+margin-bottom:20px;
+font-weight:600;
+}
+.hero p{
+font-size:18px;
+margin-bottom:35px;
+line-height:1.8;
+color:#e6e6e6;
+}
+.hero-btn{
+display:inline-block;
+padding:15px 34px;
+background:#e63946;
+color:#fff;
+font-weight:600;
+border-radius:8px;
+transition:background .3s ease, transform .3s ease;
+}
+.hero-btn:hover{
+background:#c92a37;
+transform:translateY(-2px);
+}
+.hero-dots{
+position:absolute;
+right:36px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:14px;
+z-index:3;
+}
+.hero-dots .dot{
+width:11px;
+height:11px;
+border-radius:50%;
+background:rgba(255,255,255,.35);
+cursor:pointer;
+transition:background .3s ease, transform .3s ease;
+border:none;
+padding:0;
+}
+.hero-dots .dot.active{
+background:#fff;
+transform:scale(1.25);
+}
+@media(max-width:900px){
+.hero-dots{display:none;}
+}
+/* Categories */
+.section{
+padding:90px 0;
+}
+.title{
+text-align:center;
+margin-bottom:50px;
+}
+.title h2{
+font-size:40px;
+margin-bottom:10px;
+font-weight:600;
+}
+.title p{
+color:#777;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.card{
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-8px);
+}
+.card img{
+height:220px;
+object-fit:cover;
+}
+.card-content{
+padding:25px;
+}
+.card h3{
+margin-bottom:10px;
+font-weight:600;
+}
+.card p{
+color:#666;
+line-height:1.6;
+}
+/* Story */
+.story{
+background:#fff;
+}
+.story-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+.story h2{
+font-size:42px;
+margin-bottom:20px;
+font-weight:600;
+}
+.story p{
+line-height:2;
+color:#666;
+margin-bottom:20px;
+}
+.story img{
+border-radius:20px;
+}
+/* Features */
+.features{
+background:#0E9F6E;
+color:#fff;
+}
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+.feature{
+text-align:center;
+padding:30px;
+}
+.feature h3{
+margin:15px 0;
+font-weight:600;
+}
+/* Footer */
+footer{
+background:#111;
+color:#ccc;
+padding:60px 0;
+text-align:center;
+}
+footer h3{
+color:#fff;
+font-size:28px;
+margin-bottom:15px;
+font-weight:600;
+}
+footer p{
+margin:10px 0;
+}
+@media(max-width:768px){
+nav ul{
+display:none;
+}
+.call-info{
+display:none;
+}
+.hero h1{
+font-size:36px;
+}
+.hero-eyebrow{
+font-size:12px;
+}
+.story-box{
+grid-template-columns:1fr;
+}
+}
+@media (max-width:900px){nav ul{display:none;}}
+/* ---------- mobile hamburger + slide-in menu ---------- */
+.menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:transparent;border:none;cursor:pointer;z-index:1002;position:relative;}
+.menu-toggle span{width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease,background .3s ease;}
+header.scrolled .menu-toggle span{background:#222;}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.active span:nth-child(2){opacity:0;}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-nav-overlay{position:fixed;inset:0;background:rgba(4,10,12,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .35s ease;z-index:1000;}
+.mobile-nav-overlay.active{opacity:1;visibility:visible;}
+.mobile-nav-panel{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:84%;max-width:340px;background:radial-gradient(circle at 88% 6%, rgba(46,139,139,.55), transparent 40%),radial-gradient(circle at 105% 60%, rgba(232,101,76,.5), transparent 45%),radial-gradient(circle at -5% 100%, rgba(217,164,65,.32), transparent 48%),linear-gradient(165deg, rgba(9,22,26,.95) 0%, rgba(6,15,18,.97) 100%);backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);border-left:1px solid rgba(255,255,255,.08);z-index:1001;box-shadow:-20px 0 60px rgba(0,0,0,.5);transform:translateX(100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:20px 20px 16px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;box-sizing:border-box;font-family:'Poppins','Work Sans',sans-serif;}
+.mobile-nav-panel.active{transform:translateX(0);}
+/* --- Mobile nav header with close button --- */
+.mnp-head{display:flex;align-items:center;gap:10px;padding-bottom:12px;margin-bottom:4px;border-bottom:1px solid rgba(255,255,255,.14);flex-shrink:0;position:relative;}
+.mnp-head .mnp-mark{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.mnp-head .mnp-name{color:#fff;font-weight:700;font-size:16px;line-height:1.2;}
+.mnp-head .mnp-tag{color:#a9d2cc;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:2px;}
+/* Close button inside the panel */
+.mnp-close{
+  position:absolute;
+  top:0;
+  right:0;
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  border:1.5px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-size:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:background .25s ease, border-color .25s ease, transform .25s ease;
+  flex-shrink:0;
+  line-height:1;
+}
+.mnp-close:hover{
+  background:rgba(232,101,76,.2);
+  border-color:rgba(232,101,76,.6);
+  transform:scale(1.08);
+}
+.mnp-close:active{
+  transform:scale(.95);
+}
+.mnp-label{color:#E3A64A;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:8px 4px 0;flex-shrink:0;}
+.mobile-nav-panel a{display:flex;align-items:center;gap:11px;padding:8px 6px;font-size:14.5px;font-weight:600;color:#eef5f3;border-bottom:none;opacity:0;transform:translateX(14px);transition:opacity .4s ease,transform .4s ease,background .2s ease,color .2s ease;border-radius:9px;flex-shrink:0;}
 .mobile-nav-panel.active a{opacity:1;transform:translateX(0);}
 .mobile-nav-panel a .mnp-ico{width:20px;text-align:center;font-size:14px;flex-shrink:0;}
 .mobile-nav-panel a.sub{font-size:13px;font-weight:500;color:#c3d8d4;padding:7px 6px;}
 .mobile-nav-panel a.active,.mobile-nav-panel a:hover{background:rgba(255,255,255,.09);color:#FF8A61;}
-.mobile-nav-panel a:hover{background:rgba(255,255,255,.09);color:#FF8A61;}
-.mobile-nav-panel a.active{background:rgba(255,255,255,.09);color:#FF8A61;border-left:3px solid #E8654C;padding-left:12px;border-radius:0 9px 9px 0;}
 .mobile-nav-panel .mobile-cta{margin-top:14px;flex-shrink:0;background:linear-gradient(120deg,#E8654C,#C94E37);color:#fff !important;text-align:center;justify-content:center;padding:13px;border-radius:12px;font-weight:700;box-shadow:0 12px 26px rgba(232,101,76,.35);}
 body.nav-open{overflow:hidden;}
 @media (max-width:900px){.menu-toggle{display:flex;}}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<nav>
+<div class="logo">Saha<span>Finn</span></div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="product.html">Products</a></li>
+<li><a href="Fish.html">Fish</a></li>
+<li><a href="chicken.html">Chicken</a></li>
+<li><a href="mutton.html">Mutton</a></li>
+<li><a href="Contact.html">Contact</a></li>
+</ul>
+<div class="nav-right">
+<a href="tel:+918431083956" class="call-info">CALL NOW! 📞 <b>+91 84310 83956</b></a>
+<a href="order.html" class="btn">Order Now</a>
+<button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+</nav>
+</div>
+</header>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<nav class="mobile-nav-panel" id="mobileNavPanel">
+  <div class="mnp-head">
+    <div class="mnp-mark">🐟</div>
     <div><div class="mnp-name">Saha Finn</div><div class="mnp-tag">Fresh Fish & Meat</div></div>
     <button class="mnp-close" id="mobileNavClose" aria-label="Close menu">✕</button>
   </div>
   <a href="index.html" class="active"><span class="mnp-ico">🏠</span>Home</a>
-  <a href="index.html"><span class="mnp-ico">🏠</span>Home</a>
   <a href="about.html"><span class="mnp-ico">ℹ️</span>About Us</a>
   <a href="product.html"><span class="mnp-ico">🛒</span>Products</a>
-  <a href="product.html" class="active"><span class="mnp-ico">🛒</span>Products</a>
   <a href="shop.html"><span class="mnp-ico">🛍️</span>Shop</a>
   <a href="sarvices.html"><span class="mnp-ico">🧰</span>Services</a>
   <a href="Contact.html"><span class="mnp-ico">✉️</span>Contact</a>
@@ -28,5 +447,150 @@ body.nav-open{overflow:hidden;}
   <a href="varieties.html" class="sub"><span class="mnp-ico">🎣</span>Varieties</a>
   <a href="order.html" class="mobile-cta"><span class="mnp-ico">📦</span>Order Now</a>
 </nav>
+<section class="hero">
+<div class="hero-slides">
+<div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&w=1600&q=80');"></div>
+</div>
+<div class="container">
+<div class="hero-content">
+<span class="hero-eyebrow">Saha Finn</span>
+<h1>Fresh Fish & Meat Delivered To Your Doorstep</h1>
+<p>
+Premium quality seafood, chicken and mutton sourced from trusted local suppliers.
+Freshly packed and delivered with hygiene and care.
+</p>
+<a href="shop.html" class="hero-btn">Shop Now</a>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="title">
+<h2>Shop By Category</h2>
+<p>Choose your favourite fresh products.</p>
+</div>
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Fresh Fish</h3>
+<p>Ocean fresh fish cleaned and packed with care.</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Chicken</h3>
+<p>Farm fresh chicken cut and cleaned hygienically.</p>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=800&q=80">
+<div class="card-content">
+<h3>Mutton</h3>
+<p>Premium quality goat meat with perfect freshness.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section story">
+<div class="container">
+<div class="story-box">
+<div>
+<h2>Behind the Meat Story</h2>
+<p>
+It started with a simple idea of delivering fresh fish and meat straight to your doorstep. What began as connecting with trusted local shops grew into a community built on trust and freshness.
+</p>
+<p>
+By bringing local suppliers online, we made quality meat and fish easily accessible. With your support, we continue to grow while keeping freshness at the heart of everything we do.
+</p>
+<a href="about.html" class="btn">Learn More</a>
+</div>
+<div>
+<img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=900&q=80">
+</div>
+</div>
+</div>
+</section>
+<section class="section features">
+<div class="container">
+<div class="title">
+<h2>Why Choose Saha Finn</h2>
+<p style="color:#fff;">Freshness is our promise.</p>
+</div>
+<div class="feature-grid">
+<div class="feature">
+<h3>100% Fresh</h3>
+<p>Daily sourced products from trusted local markets.</p>
+</div>
+<div class="feature">
+<h3>Fast Delivery</h3>
+<p>Quick doorstep delivery across your city.</p>
+</div>
+<div class="feature">
+<h3>Safe Packaging</h3>
+<p>Hygienically cleaned and securely packed.</p>
+</div>
+<div class="feature">
+<h3>Best Quality</h3>
+<p>Premium seafood and meat at affordable prices.</p>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<h3>Saha Finn</h3>
+<p>Behind the Meat Story</p>
+<p>
+It started with a simple idea of delivering fresh fish and meat straight to your doorstep.
+</p>
+<p><strong>📞 +91 84310 83956</strong></p>
+<p>© 2026 Saha Finn. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+const header=document.querySelector("header");
+window.addEventListener("scroll",function(){
+if(window.scrollY>50){
+header.classList.add("scrolled");
+}else{
+header.classList.remove("scrolled");
+}
+});
+</script>
+<script>
+(function(){
+  const toggle=document.getElementById('menuToggle');
+  const overlay=document.getElementById('mobileNavOverlay');
+  const panel=document.getElementById('mobileNavPanel');
+  const closeBtn=document.getElementById('mobileNavClose');
+  if(!toggle||!overlay||!panel) return;
+  function closeMenu(){
+    toggle.classList.remove('active');
+    overlay.classList.remove('active');
+    panel.classList.remove('active');
+    document.body.classList.remove('nav-open');
+  }
+  function openMenu(){
+    toggle.classList.add('active');
+    overlay.classList.add('active');
+    panel.classList.add('active');
+    document.body.classList.add('nav-open');
+  }
+  toggle.addEventListener('click',()=>{
+    panel.classList.contains('active') ? closeMenu() : openMenu();
+  });
+  // Close button inside the panel
+  if(closeBtn){
+    closeBtn.addEventListener('click', closeMenu);
+  }
+  overlay.addEventListener('click',closeMenu);
+  panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+})();
+</script>
 </body>
 </html>
+
