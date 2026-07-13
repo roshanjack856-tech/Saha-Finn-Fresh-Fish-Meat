@@ -425,6 +425,8 @@ grid-template-columns:1fr;
 
 }
 
+@media (max-width:900px){nav ul{display:none;}}
+
 /* ---------- mobile hamburger + slide-in menu ---------- */
 .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:transparent;border:none;cursor:pointer;z-index:1002;position:relative;}
 .menu-toggle span{width:24px;height:2px;background:#fff;border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease,background .3s ease;}
@@ -448,7 +450,7 @@ header.scrolled .menu-toggle span{background:#222;}
 .mobile-nav-panel a.active,.mobile-nav-panel a:hover{background:rgba(255,255,255,.09);color:#FF8A61;}
 .mobile-nav-panel .mobile-cta{margin-top:14px;flex-shrink:0;background:linear-gradient(120deg,#E8654C,#C94E37);color:#fff !important;text-align:center;justify-content:center;padding:13px;border-radius:12px;font-weight:700;box-shadow:0 12px 26px rgba(232,101,76,.35);}
 body.nav-open{overflow:hidden;}
-@media (max-width:768px){.menu-toggle{display:flex;}}
+@media (max-width:900px){.menu-toggle{display:flex;}}
 </style>
 
 </head>
@@ -525,10 +527,11 @@ body.nav-open{overflow:hidden;}
 
 <span class="hero-eyebrow">Saha Finn</span>
 
-<h1>Premium Meat & Seafood for Every Home</h1>
+<h1>Fresh Fish & Meat Delivered To Your Doorstep</h1>
 
 <p>
-Choose from premium-quality chicken, mutton, fish, and seafood, carefully prepared and hygienically packed to bring restaurant-quality ingredients to your home.
+Premium quality seafood, chicken and mutton sourced from trusted local suppliers.
+Freshly packed and delivered with hygiene and care.
 </p>
 
 <a href="shop.html" class="hero-btn">Shop Now</a>
