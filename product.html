@@ -179,7 +179,8 @@
   .hero-count .num{font-family:'Fraunces',serif;font-size:28px;color:#fff;}
   .hero-count .lbl{font-size:12px;color:#9fb8b4;text-transform:uppercase;letter-spacing:.08em;}
 
-/* ---------- mobile hamburger + slide-in menu (list style) ---------- */
+  /* ---------- mobile hamburger + slide-in menu ---------- */
+  /* ---------- Unified mobile hamburger + slide-in menu ---------- */
 .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:transparent;border:none;cursor:pointer;z-index:1002;position:relative;}
 .menu-toggle span{width:24px;height:2px;background:#222;border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease;}
 .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -187,10 +188,15 @@
 .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 .mobile-nav-overlay{position:fixed;inset:0;background:rgba(10,8,14,.25);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .35s ease;z-index:1000;}
 .mobile-nav-overlay.active{opacity:1;visibility:visible;}
-.mobile-nav-panel{position:fixed;top:0;left:0;height:100vh;height:100dvh;width:78%;max-width:300px;background:rgba(20,22,26,.42);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-right:1px solid rgba(255,255,255,.15);z-index:1001;box-shadow:20px 0 60px rgba(0,0,0,.25);transform:translateX(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;justify-content:center;padding:40px 34px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
+.mobile-nav-panel{position:fixed;top:0;left:0;height:100vh;height:100dvh;width:78%;max-width:300px;background:rgba(20,22,26,.42);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-right:1px solid rgba(255,255,255,.15);z-index:1001;box-shadow:20px 0 60px rgba(0,0,0,.25);transform:translateX(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:34px 34px 40px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;font-family:'Unbounded','Poppins',sans-serif;}
 .mobile-nav-panel.active{transform:translateX(0);}
-.mnp-list{display:flex;flex-direction:column;}
-.mnp-item{display:flex;align-items:center;gap:18px;padding:15px 4px;color:#f3eef2;font-weight:500;font-size:16px;letter-spacing:.01em;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease,color .2s ease,padding-left .2s ease;}
+.mnp-brand{display:flex;align-items:center;gap:12px;padding-bottom:22px;margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15);flex-shrink:0;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease;}
+.mobile-nav-panel.active .mnp-brand{opacity:1;transform:translateX(0);}
+.mnp-brand .mnp-mark{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.mnp-brand .mnp-name{color:#fff;font-weight:700;font-size:17px;line-height:1.2;}
+.mnp-brand .mnp-tag{color:#c9c9c9;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
+.mnp-list{display:flex;flex-direction:column;flex:1;justify-content:center;}
+.mnp-item{display:flex;align-items:center;gap:18px;padding:15px 4px;color:#f3eef2;font-weight:500;font-size:16px;letter-spacing:.01em;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease,color .2s ease,padding-left .2s ease;text-decoration:none;}
 .mobile-nav-panel.active .mnp-item{opacity:1;transform:translateX(0);}
 .mnp-item .mnp-ico{width:22px;flex-shrink:0;text-align:center;font-size:17px;opacity:.9;}
 .mnp-item:hover,.mnp-item.active{color:#FF9B73;padding-left:10px;}
@@ -229,6 +235,13 @@ body.nav-open{overflow:hidden;}
 
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 <nav class="mobile-nav-panel" id="mobileNavPanel">
+  <div class="mnp-brand">
+    <div class="mnp-mark">🐟</div>
+    <div>
+      <div class="mnp-name">Saha Finn</div>
+      <div class="mnp-tag">Fresh Fish &amp; Meat</div>
+    </div>
+  </div>
   <div class="mnp-list">
     <a href="index.html" class="mnp-item"><span class="mnp-ico">🏠</span>Home</a>
     <a href="about.html" class="mnp-item"><span class="mnp-ico">ℹ️</span>About Us</a>
