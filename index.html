@@ -364,6 +364,28 @@ grid-template-columns:1fr;
 }
 }
 @media (max-width:900px){nav ul{display:none;}}
+/* FIX: on mobile the logo + "Order Now" pill were eating the whole row,
+   leaving no room for the hamburger — it wasn't invisible, it was being
+   pushed off-screen. Hide the standalone pill (it's already an item inside
+   the slide-in menu) and shrink the logo so the toggle always has space. */
+@media (max-width:900px){
+.nav-right .btn{
+display:none;
+}
+nav{
+gap:12px;
+}
+}
+@media (max-width:480px){
+.logo{
+font-size:21px;
+gap:8px !important;
+}
+.logo img{
+width:42px !important;
+height:42px !important;
+}
+}
 /* ---------- mobile hamburger + slide-in menu (list style) ---------- */
 /* ---------- Unified mobile hamburger + slide-in menu ---------- */
 /* FIX: the button now always has a small rounded "chip" background behind
