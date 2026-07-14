@@ -363,7 +363,7 @@ grid-template-columns:1fr;
 .mobile-nav-panel.active{transform:translateX(0);}
 .mnp-brand{display:flex;align-items:center;gap:12px;padding-bottom:22px;margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15);flex-shrink:0;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease;}
 .mobile-nav-panel.active .mnp-brand{opacity:1;transform:translateX(0);}
-.mnp-brand .mnp-mark{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.mnp-brand .mnp-mark{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
 .mnp-brand .mnp-name{color:#fff;font-weight:700;font-size:17px;line-height:1.2;}
 .mnp-brand .mnp-tag{color:#c9c9c9;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
 .mnp-list{display:flex;flex-direction:column;flex:1;justify-content:center;}
@@ -379,7 +379,7 @@ body.nav-open{overflow:hidden;}
 <header>
 <div class="container">
 <nav>
-<div class="logo">Saha<span>Finn</span></div>
+<a href="index.html" class="logo" style="display:flex;align-items:center;gap:10px;"><img src="logo.png" alt="Saha Finn logo" style="width:58px;height:58px;object-fit:cover;border-radius:50%;">Saha<span>Finn</span></a>
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About Us</a></li>
@@ -400,7 +400,7 @@ body.nav-open{overflow:hidden;}
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 <nav class="mobile-nav-panel" id="mobileNavPanel">
   <div class="mnp-brand">
-    <div class="mnp-mark">🐟</div>
+    <div class="mnp-mark"><img src="logo.png" alt="Saha Finn" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
     <div>
       <div class="mnp-name">Saha Finn</div>
       <div class="mnp-tag">Fresh Fish &amp; Meat</div>
