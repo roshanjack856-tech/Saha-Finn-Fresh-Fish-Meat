@@ -3,223 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop | Saha Finn</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+<title>Saha Finn — 50 Fish Varieties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  :root{
+    --ink:#0B2027;
+    --paper:#F7FAF9;
+    --coral:#E8654C;
+    --coral-deep:#C94E37;
+    --teal:#2E8B8B;
+    --teal-deep:#1F6363;
+    --line:#DCE6E3;
+    --text:#1C2B2E;
+    --text-dim:#5A6B6D;
+    --gold:#D9A441;
+    --radius:14px;
+    --shadow:0 12px 28px -14px rgba(11,32,39,0.28);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--text);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-0.01em;color:var(--ink);margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  button,input{font-family:inherit;}
+  button{cursor:pointer;border:none;}
+  ::selection{background:var(--coral);color:#fff;}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+  /* header */
+  .site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1240px;margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo .mark{width:58px;height:58px;flex-shrink:0;}
+  .logo .word{font-family:'Fraunces',serif;font-size:21px;font-weight:700;color:var(--ink);line-height:1;}
+  .logo .word small{display:block;font-family:'Work Sans',sans-serif;font-size:10px;letter-spacing:.16em;color:var(--teal-deep);font-weight:600;text-transform:uppercase;margin-top:3px;}
+  nav.main-nav{display:flex;gap:30px;}
+  nav.main-nav a{font-size:14px;font-weight:600;color:var(--text-dim);padding-bottom:4px;border-bottom:2px solid transparent;}
+  nav.main-nav a.active,nav.main-nav a:hover{color:var(--ink);border-color:var(--coral);}
+  .header-cta{background:var(--coral);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:9px;}
+  .header-cta:hover{background:var(--coral-deep);}
+  @media (max-width:900px){nav.main-nav{display:none;}}
 
-body{
-background:#f8f8f8;
-color:#222;
-}
+  /* page hero */
+  .page-hero{
+    background:linear-gradient(120deg,#0B2027 0%,#123a3f 60%,#1a1614 100%);
+    color:#fff;padding:56px 40px 40px;position:relative;overflow:hidden;
+  }
+  .page-hero::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(circle at 85% 20%, rgba(232,101,76,0.3), transparent 40%),
+               radial-gradient(circle at 15% 80%, rgba(46,139,139,0.3), transparent 45%);
+  }
+  .page-hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
+  .hero-eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);}
+  .page-hero h1{font-size:clamp(30px,4.4vw,46px);line-height:1.06;max-width:640px;}
+  .page-hero p{color:#cfe3e0;font-size:15.5px;margin-top:14px;max-width:560px;line-height:1.65;}
+  .hero-count{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap;}
+  .hero-count .num{font-family:'Fraunces',serif;font-size:28px;color:#fff;}
+  .hero-count .lbl{font-size:12px;color:#9fb8b4;text-transform:uppercase;letter-spacing:.08em;}
 
-a{
-text-decoration:none;
-}
+  /* controls */
+  .wrap{max-width:1240px;margin:0 auto;padding:40px 40px 70px;}
+  .controls{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+  .filter-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .filter-btn{padding:9px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--text-dim);}
+  .filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .search-box{
+    display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
+    border-radius:10px;padding:9px 14px;min-width:220px;
+  }
+  .search-box input{border:none;outline:none;font-size:13.5px;width:100%;color:var(--text);background:transparent;}
+  .result-count{font-size:13px;color:var(--text-dim);margin-bottom:8px;}
+  .photo-note{font-size:11.5px;color:var(--text-dim);margin-bottom:22px;}
+  .photo-note a{color:var(--teal-deep);font-weight:600;}
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
+  .fish-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .fish-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;box-shadow:var(--shadow);transition:transform .16s ease;
+  }
+  .fish-card:hover{transform:translateY(-3px);}
+  .fish-media{height:132px;position:relative;}
+  .fish-media svg{width:100%;height:100%;position:absolute;inset:0;}
+  .fish-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:1;background:#fff;}
+  .fish-cat-badge{
+    position:absolute;top:10px;left:10px;background:rgba(11,32,39,0.72);color:#fff;
+    font-size:10px;font-weight:700;padding:3px 9px;border-radius:6px;letter-spacing:.03em;
+    text-transform:uppercase;z-index:2;
+  }
+  .fish-body{padding:14px 16px 16px;}
+  .fish-name{font-family:'Fraunces',serif;font-weight:700;font-size:15.5px;color:var(--ink);line-height:1.2;}
+  .fish-local{font-size:11.5px;color:var(--teal-deep);font-weight:600;margin-top:2px;}
+  .fish-desc{font-size:12px;color:var(--text-dim);line-height:1.5;margin:8px 0 12px;min-height:34px;}
+  .fish-foot{display:flex;justify-content:space-between;align-items:center;}
+  .fish-price{font-weight:700;color:var(--ink);font-size:14px;}
+  .fish-price small{font-weight:500;color:var(--text-dim);font-size:10.5px;}
+  .fish-order{
+    font-size:11.5px;font-weight:700;color:#fff;background:var(--teal);
+    padding:6px 12px;border-radius:7px;
+  }
+  .fish-order:hover{background:var(--teal-deep);}
 
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#fff;
-box-shadow:0 3px 15px rgba(0,0,0,.08);
-z-index:999;
-}
+  .no-results{grid-column:1/-1;text-align:center;padding:60px 0;color:var(--text-dim);}
 
-nav{
-height:80px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+  @media (max-width:1080px){.fish-grid{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:760px){
+    .fish-grid{grid-template-columns:repeat(2,1fr);}
+    .site-header{padding:16px 20px;}
+    .page-hero{padding:44px 20px 32px;}
+    .wrap{padding:32px 20px 60px;}
+  }
+  @media (max-width:460px){.fish-grid{grid-template-columns:1fr;}}
 
-.logo{
-font-size:32px;
-font-weight:800;
-color:#0E9F6E;
-}
+  footer{background:var(--ink);color:#9fb8b4;padding:30px 40px;text-align:center;font-size:13px;}
+  footer a{color:#7fd9b0;font-weight:600;}
 
-.logo span{
-color:#ff5a1f;
-}
+  a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--coral);outline-offset:2px;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} .fish-card{transition:none;}}
 
-nav ul{
-display:flex;
-list-style:none;
-gap:30px;
-}
-
-nav ul li a{
-color:#333;
-font-weight:500;
-}
-
-.btn{
-padding:12px 25px;
-background:#ff5a1f;
-color:#fff;
-border-radius:40px;
-}
-
-.hero{
-height:45vh;
-margin-top:80px;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:#fff;
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url("https://images.unsplash.com/photo-1544943910-4c1dc44aab44?auto=format&fit=crop&w=1600&q=80") center/cover;
-}
-
-.hero h1{
-font-size:55px;
-}
-
-.hero p{
-margin-top:10px;
-font-size:18px;
-}
-
-.search-box{
-padding:60px 0 30px;
-}
-
-.search{
-display:flex;
-gap:15px;
-}
-
-.search input{
-flex:1;
-padding:15px;
-border:1px solid #ddd;
-border-radius:8px;
-font-size:16px;
-}
-
-.search button{
-padding:15px 30px;
-border:none;
-background:#ff5a1f;
-color:#fff;
-border-radius:8px;
-cursor:pointer;
-}
-
-.category{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-margin-bottom:40px;
-}
-
-.category button{
-padding:10px 22px;
-border:none;
-background:#fff;
-border-radius:30px;
-cursor:pointer;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-padding-bottom:80px;
-}
-
-.card{
-background:#fff;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card img{
-width:100%;
-height:220px;
-object-fit:cover;
-}
-
-.content{
-padding:20px;
-}
-
-.content h3{
-margin-bottom:10px;
-}
-
-.price{
-font-size:22px;
-font-weight:700;
-color:#0E9F6E;
-margin:12px 0;
-}
-
-.buttons{
-display:flex;
-gap:10px;
-}
-
-.buttons button{
-flex:1;
-padding:12px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-weight:600;
-}
-
-.cart{
-background:#ff5a1f;
-color:#fff;
-}
-
-.wish{
-background:#0E9F6E;
-color:#fff;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:36px;
-}
-
-.search{
-flex-direction:column;
-}
-
-}
-
-@media (max-width:900px){nav ul{display:none;}}
-
-/* ---------- mobile hamburger + slide-in menu ---------- */
-/* ---------- Unified mobile hamburger + slide-in menu ---------- */
+/* ---------- mobile hamburger + slide-in menu (list style) ---------- */
 .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:transparent;border:none;cursor:pointer;z-index:1002;position:relative;}
 .menu-toggle span{width:24px;height:2px;background:#222;border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease;}
 .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -227,221 +134,220 @@ flex-direction:column;
 .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 .mobile-nav-overlay{position:fixed;inset:0;background:rgba(10,8,14,.25);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .35s ease;z-index:1000;}
 .mobile-nav-overlay.active{opacity:1;visibility:visible;}
-.mobile-nav-panel{position:fixed;top:0;left:0;height:100vh;height:100dvh;width:78%;max-width:300px;background:rgba(20,22,26,.42);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-right:1px solid rgba(255,255,255,.15);z-index:1001;box-shadow:20px 0 60px rgba(0,0,0,.25);transform:translateX(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:34px 34px 40px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;font-family:'Unbounded','Poppins',sans-serif;}
+.mobile-nav-panel{position:fixed;top:0;left:0;height:100vh;height:100dvh;width:78%;max-width:300px;background:rgba(20,22,26,.42);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-right:1px solid rgba(255,255,255,.15);z-index:1001;box-shadow:20px 0 60px rgba(0,0,0,.25);transform:translateX(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;justify-content:center;padding:40px 34px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
 .mobile-nav-panel.active{transform:translateX(0);}
-.mnp-brand{display:flex;align-items:center;gap:12px;padding-bottom:22px;margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15);flex-shrink:0;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease;}
-.mobile-nav-panel.active .mnp-brand{opacity:1;transform:translateX(0);}
-.mnp-brand .mnp-mark{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
-.mnp-brand .mnp-name{color:#fff;font-weight:700;font-size:17px;line-height:1.2;}
-.mnp-brand .mnp-tag{color:#c9c9c9;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
-.mnp-list{display:flex;flex-direction:column;flex:1;justify-content:center;}
-.mnp-item{display:flex;align-items:center;gap:18px;padding:15px 4px;color:#f3eef2;font-weight:500;font-size:16px;letter-spacing:.01em;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease,color .2s ease,padding-left .2s ease;text-decoration:none;}
+.mnp-list{display:flex;flex-direction:column;}
+.mnp-item{display:flex;align-items:center;gap:18px;padding:15px 4px;color:#f3eef2;font-weight:500;font-size:16px;letter-spacing:.01em;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease,color .2s ease,padding-left .2s ease;}
 .mobile-nav-panel.active .mnp-item{opacity:1;transform:translateX(0);}
 .mnp-item .mnp-ico{width:22px;flex-shrink:0;text-align:center;font-size:17px;opacity:.9;}
 .mnp-item:hover,.mnp-item.active{color:#FF9B73;padding-left:10px;}
 body.nav-open{overflow:hidden;}
 @media (max-width:900px){.menu-toggle{display:flex;}}
-
 </style>
-
 </head>
-
 <body>
 
-<header>
-
-<div class="container">
-
-<nav>
-
-<div class="logo">Saha<span>Finn</span></div>
-
-<ul>
-
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="product.html">Products</a></li>
-<li><a href="order.html">Order Now</a></li>
-<li><a href="Fish.html">Fish</a></li>
-<li><a href="chicken.html">Chicken</a></li>
-<li><a href="mutton.html">Mutton</a></li>
-<li><a href="Contact.html">Contact</a></li>
-
-</ul>
-
-<a href="order.html" class="btn">Order Now</a>
-
-<button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-
-</nav>
-
-</div>
-
+<header class="site-header">
+  <div class="logo">
+    <img class="mark" src="logo.png" alt="Saha Finn logo" style="border-radius:50%;object-fit:cover;">
+    <div class="word">Saha Finn<small>Fresh Fish & Meat</small></div>
+  </div>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="order.html">Order Now</a>
+    <a href="product.html#products">Products</a>
+    <a href="varieties.html" class="active">Fish Varieties</a>
+  </nav>
+  <a class="header-cta" href="order.html">Order Now</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
 </header>
 
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 <nav class="mobile-nav-panel" id="mobileNavPanel">
-  <div class="mnp-brand">
-    <div class="mnp-mark">🐟</div>
-    <div>
-      <div class="mnp-name">Saha Finn</div>
-      <div class="mnp-tag">Fresh Fish &amp; Meat</div>
-    </div>
-  </div>
   <div class="mnp-list">
     <a href="index.html" class="mnp-item"><span class="mnp-ico">🏠</span>Home</a>
     <a href="about.html" class="mnp-item"><span class="mnp-ico">ℹ️</span>About Us</a>
     <a href="product.html" class="mnp-item"><span class="mnp-ico">🛒</span>Products</a>
-    <a href="shop.html" class="mnp-item active"><span class="mnp-ico">🛍️</span>Shop</a>
+    <a href="shop.html" class="mnp-item"><span class="mnp-ico">🛍️</span>Shop</a>
     <a href="sarvices.html" class="mnp-item"><span class="mnp-ico">🧰</span>Services</a>
     <a href="Contact.html" class="mnp-item"><span class="mnp-ico">✉️</span>Contact</a>
     <a href="Fish.html" class="mnp-item"><span class="mnp-ico">🐟</span>Fish</a>
     <a href="chicken.html" class="mnp-item"><span class="mnp-ico">🍗</span>Chicken</a>
     <a href="mutton.html" class="mnp-item"><span class="mnp-ico">🥩</span>Mutton</a>
-    <a href="varieties.html" class="mnp-item"><span class="mnp-ico">🎣</span>Varieties</a>
+    <a href="varieties.html" class="mnp-item active"><span class="mnp-ico">🎣</span>Varieties</a>
     <a href="order.html" class="mnp-item"><span class="mnp-ico">📦</span>Order Now</a>
   </div>
 </nav>
 
-<section class="hero">
-
-<div>
-
-<h1>Fresh Meat & Seafood Shop</h1>
-
-<p>Choose your favourite fresh products</p>
-
-</div>
-
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Full Catalogue</div>
+    <h1>50 Fish Varieties, All in One Place</h1>
+    <p>From everyday river fish to prized ocean catch and shellfish — every variety cleaned, cut, and delivered fresh the same day.</p>
+    <div class="hero-count">
+      <div><div class="num">50</div><div class="lbl">Varieties</div></div>
+      <div><div class="num">3</div><div class="lbl">Categories</div></div>
+      <div><div class="num">Same-day</div><div class="lbl">Delivery</div></div>
+    </div>
+  </div>
 </section>
 
-<section class="search-box">
+<section class="wrap">
+  <div class="controls">
+    <div class="filter-row" id="filterRow">
+      <button class="filter-btn active" data-cat="All">All (50)</button>
+      <button class="filter-btn" data-cat="Freshwater">Freshwater</button>
+      <button class="filter-btn" data-cat="Ocean">Ocean</button>
+      <button class="filter-btn" data-cat="Shellfish">Shellfish & Mollusks</button>
+    </div>
+    <div class="search-box">
+      🔍 <input type="text" id="searchInput" placeholder="Search by name...">
+    </div>
+  </div>
 
-<div class="container">
-
-<div class="search">
-
-<input type="text" placeholder="Search products...">
-
-<button><i class="fa-solid fa-search"></i> Search</button>
-
-</div>
-
-</div>
-
+  <div class="result-count" id="resultCount"></div>
+  <div class="photo-note">Reference photos via <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> (free-licensed). Swap in your own product photos any time for the most accurate look.</div>
+  <div class="fish-grid" id="fishGrid"></div>
 </section>
 
-<section>
-
-<div class="container">
-
-<div class="category">
-
-<button>All</button>
-<button>🐟 Fish</button>
-<button>🍗 Chicken</button>
-<button>🥩 Mutton</button>
-<button>🦐 Seafood</button>
-
-</div>
-
-<div class="products">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80">
-
-<div class="content">
-
-<h3>Fresh Salmon</h3>
-
-<p>Premium ocean fresh salmon.</p>
-
-<div class="price">₹499/kg</div>
-
-<div class="buttons">
-
-<button class="cart">Add Cart</button>
-
-<button class="wish"><i class="fa-regular fa-heart"></i></button>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80">
-
-<div class="content">
-
-<h3>Fresh Chicken</h3>
-
-<p>Farm fresh cleaned chicken.</p>
-
-<div class="price">₹299/kg</div>
-
-<div class="buttons">
-
-<button class="cart">Add Cart</button>
-
-<button class="wish"><i class="fa-regular fa-heart"></i></button>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=800&q=80">
-
-<div class="content">
-
-<h3>Mutton Curry Cut</h3>
-
-<p>Fresh premium goat meat.</p>
-
-<div class="price">₹899/kg</div>
-
-<div class="buttons">
-
-<button class="cart">Add Cart</button>
-
-<button class="wish"><i class="fa-regular fa-heart"></i></button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer style="background:#111;color:#ccc;padding:60px 0;text-align:center;">
-
-<div class="container">
-
-<h3 style="color:#fff;font-size:28px;margin-bottom:15px;">Saha Finn</h3>
-
-<p>Behind the Meat Story</p>
-
-<p>Fresh fish and meat, delivered with trust and freshness.</p>
-
-<p><strong>📞 +91 84310 83956</strong></p>
-
-<p style="margin-top:15px;">© 2026 Saha Finn. All Rights Reserved.</p>
-
-</div>
-
+<footer>
+  © 2026 Saha Finn — Fresh, honest, and on time, every order. &nbsp;·&nbsp;
+  <a href="https://chat.whatsapp.com/DC6CuWJAWyrECw6JnJ9KA7" target="_blank" rel="noopener">Chat on WhatsApp</a>
 </footer>
+
+<script>
+  const fish = [
+    { name:"Rohu", local:"Rohu", cat:"Freshwater", desc:"Soft-fleshed river fish, ideal for curry", price:280, photo:"Labeo_rohita.JPG" },
+    { name:"Catla", local:"Katla", cat:"Freshwater", desc:"Mild flavour, popular for frying", price:260, photo:"Catla_catla.JPG" },
+    { name:"Silver Carp", local:"", cat:"Freshwater", desc:"Budget-friendly, great in gravies", price:220, photo:"Hypophthalmichthys_molitrix.jpg" },
+    { name:"Grass Carp", local:"", cat:"Freshwater", desc:"Firm texture, holds up in curries", price:240, photo:"Ctenopharyngodon_idella.jpeg" },
+    { name:"Common Carp", local:"", cat:"Freshwater", desc:"Classic pond fish, everyday favourite", price:230, photo:"Cyprinus_carpio.jpg" },
+    { name:"Snakehead Murrel", local:"Viral Meen", cat:"Freshwater", desc:"Prized for soups, minimal bones", price:380, photo:"Channa_striata.jpg" },
+    { name:"Pearl Spot", local:"Karimeen", cat:"Freshwater", desc:"Kerala favourite, classic pan-fry", price:550, photo:"Etroplus_suratensis.jpg" },
+    { name:"Hilsa", local:"Ilish", cat:"Freshwater", desc:"Rich, oily flesh, festive favourite", price:700, photo:"Tenualosa_ilisha.jpg" },
+    { name:"Freshwater Catfish", local:"Singhi", cat:"Freshwater", desc:"Nearly boneless, distinct taste", price:420, photo:"Heteropneustes_fossilis.jpg" },
+    { name:"Freshwater Eel", local:"Malanchi", cat:"Freshwater", desc:"Firm and rich in Omega-3", price:480, photo:"Anguilla_bengalensis.jpg" },
+    { name:"Tilapia", local:"", cat:"Freshwater", desc:"Mild taste, boneless fillets available", price:200, photo:"Oreochromis_niloticus.jpg" },
+    { name:"Basa / Pangasius", local:"", cat:"Freshwater", desc:"Soft boneless fillet, kid-friendly", price:190, photo:"Pangasianodon_hypophthalmus.jpg" },
+    { name:"White Pomfret", local:"Vella Vaval", cat:"Ocean", desc:"Delicate white flesh, whole cleaned", price:650, photo:"Pampus_argenteus.jpg" },
+    { name:"Black Pomfret", local:"Karutha Vaval", cat:"Ocean", desc:"Firmer bite, excellent for frying", price:500, photo:"Parastromateus_niger.jpg" },
+    { name:"Seer Fish", local:"Vanjaram", cat:"Ocean", desc:"Boneless steak cuts, most-loved", price:800, photo:"Scomberomorus_commerson.jpg" },
+    { name:"Indian Salmon", local:"Rawas", cat:"Ocean", desc:"Rich, buttery texture", price:750, photo:"Eleutheronema_tetradactylum.jpg" },
+    { name:"Mackerel", local:"Bangda / Ayala", cat:"Ocean", desc:"Everyday favourite, great for fry", price:260, photo:"Rastrelliger_kanagurta.jpg" },
+    { name:"Sardine", local:"Mathi / Chaala", cat:"Ocean", desc:"Small, oily, packed with Omega-3", price:180, photo:"Sardinella_longiceps.jpg" },
+    { name:"Anchovy", local:"Netholi / Kozhuva", cat:"Ocean", desc:"Tiny and crisp when fried", price:220, photo:"Stolephorus_indicus.jpg" },
+    { name:"Tuna", local:"", cat:"Ocean", desc:"Meaty steaks, mild flavour", price:420, photo:"Thunnus_albacares.jpg" },
+    { name:"Red Snapper", local:"Sankara", cat:"Ocean", desc:"Sweet flesh, great whole-roasted", price:480, photo:"Lutjanus_campechanus.jpg" },
+    { name:"Grouper", local:"Kalava", cat:"Ocean", desc:"Firm white flesh, low on bones", price:520, photo:"Epinephelus_marginatus.jpg" },
+    { name:"Barracuda", local:"Seela", cat:"Ocean", desc:"Lean and meaty, great for curry", price:350, photo:"Sphyraena_barracuda.jpg" },
+    { name:"Ribbon Fish", local:"Vaala / Savala", cat:"Ocean", desc:"Long silver fish, minimal bones", price:300, photo:"Trichiurus_lepturus.jpg" },
+    { name:"Sole Fish", local:"Naaku Meen", cat:"Ocean", desc:"Flat fish with delicate texture", price:340, photo:"Solea_solea.jpg" },
+    { name:"Butterfish", local:"Choodai", cat:"Ocean", desc:"Small and sweet, whole fried", price:260, photo:"Peprilus_triacanthus.jpg" },
+    { name:"Trevally", local:"Parai", cat:"Ocean", desc:"Firm flesh, holds up to grilling", price:320, photo:"Caranx_sexfasciatus.jpg" },
+    { name:"Croaker", local:"Ghol / Koth", cat:"Ocean", desc:"Popular pick for fish curry", price:380, photo:"Argyrosomus_regius.jpg" },
+    { name:"Sea Bass", local:"Koduva", cat:"Ocean", desc:"Prized for clean, mild taste", price:600, photo:"Lates_calcarifer.jpg" },
+    { name:"Emperor Fish", local:"", cat:"Ocean", desc:"Delicate white flesh", price:450, photo:"Lethrinus_nebulosus.jpg" },
+    { name:"Flying Fish", local:"Paruva Meen", cat:"Ocean", desc:"Coastal delicacy, roe-rich", price:320, photo:"Exocoetus_volitans.jpg" },
+    { name:"Threadfin Bream", local:"", cat:"Ocean", desc:"Sweet, delicate white fish", price:300, photo:"Nemipterus_japonicus.jpg" },
+    { name:"Stingray", local:"Thirukka", cat:"Ocean", desc:"Cartilage-based, popular in curries", price:260, photo:"Dasyatis_pastinaca.jpg" },
+    { name:"Baby Shark", local:"Sura", cat:"Ocean", desc:"Firm meat, minimal bones", price:280, photo:"Chiloscyllium_punctatum.jpg" },
+    { name:"Milkfish", local:"Poomeen", cat:"Ocean", desc:"Slightly sweet, high in natural oil", price:340, photo:"Chanos_chanos.jpg" },
+    { name:"Silver Pomfret (Baby)", local:"", cat:"Ocean", desc:"Smaller cuts, quick to fry", price:400, photo:"Pampus_argenteus.jpg" },
+    { name:"King Mackerel", local:"Peru Bangda", cat:"Ocean", desc:"Larger cut, meatier bite", price:300, photo:"Scomberomorus_cavalla.jpg" },
+    { name:"Herring", local:"", cat:"Ocean", desc:"Oily fish, rich in flavour", price:260, photo:"Clupea_harengus.jpg" },
+    { name:"Salmon (Imported)", local:"", cat:"Ocean", desc:"Premium import, rich in Omega-3", price:950, photo:"Salmo_salar.jpg" },
+    { name:"Cod (Imported)", local:"", cat:"Ocean", desc:"Mild, flaky white fish", price:900, photo:"Gadus_morhua.jpg" },
+    { name:"Tiger Prawns", local:"Kadal Eral", cat:"Shellfish", desc:"Large, juicy, great for grilling", price:650, photo:"Penaeus_monodon.jpg" },
+    { name:"White Prawns", local:"Nadan Chemmeen", cat:"Shellfish", desc:"Sweet and tender, everyday favourite", price:520, photo:"Penaeus_indicus.jpg" },
+    { name:"Small Prawns", local:"Chembeen", cat:"Shellfish", desc:"Perfect for quick fries and curries", price:380, photo:"Metapenaeus_dobsoni.jpg" },
+    { name:"Sea Crab", local:"Kadal Njandu", cat:"Shellfish", desc:"Sweet meat, great in masala", price:450, photo:"Portunus_pelagicus.jpg" },
+    { name:"Freshwater Crab", local:"Njandu", cat:"Shellfish", desc:"Earthy flavour, curry favourite", price:380, photo:"Barytelphusa_guerini.jpg" },
+    { name:"Squid", local:"Koonthal", cat:"Shellfish", desc:"Tender rings, quick to cook", price:420, photo:"Loligo_vulgaris.jpg" },
+    { name:"Cuttlefish", local:"Kanava", cat:"Shellfish", desc:"Meaty, great for masala fry", price:400, photo:"Sepia_officinalis.jpg" },
+    { name:"Octopus", local:"", cat:"Shellfish", desc:"Chewy texture, char-grill favourite", price:550, photo:"Octopus_vulgaris.jpg" },
+    { name:"Clams", local:"Kakka", cat:"Shellfish", desc:"Briny and sweet, great in rice dishes", price:260, photo:"Meretrix_meretrix.jpg" },
+    { name:"Mussels", local:"Kallummakka", cat:"Shellfish", desc:"Rich and plump, roast favourite", price:300, photo:"Perna_viridis.jpg" },
+  ];
+
+  const palette = ["#0B2027","#1F6363","#E8654C","#C94E37","#2E8B8B","#D9A441","#123a3f","#8f3223","#3E9142","#4a5a8c"];
+
+  function commonsUrl(filename){
+    return "https://commons.wikimedia.org/wiki/Special:FilePath/" + encodeURIComponent(filename) + "?width=400";
+  }
+
+  function iconFor(cat, colors){
+    if(cat === "Shellfish"){
+      return `<svg viewBox="0 0 200 132" preserveAspectRatio="xMidYMid slice">
+        <rect width="200" height="132" fill="${colors[0]}"/>
+        <path d="M40 90 Q60 40 110 45 Q150 48 150 80 Q150 100 120 100 Q90 100 80 80" fill="none" stroke="${colors[1]}" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="45" cy="88" r="6" fill="${colors[1]}"/>
+      </svg>`;
+    }
+    return `<svg viewBox="0 0 200 132" preserveAspectRatio="xMidYMid slice">
+      <rect width="200" height="132" fill="${colors[0]}"/>
+      <path d="M20 66 Q100 22 160 66 Q100 110 20 66 Z" fill="${colors[1]}" opacity="0.92"/>
+      <path d="M160 66 L182 50 L182 82 Z" fill="${colors[1]}"/>
+      <circle cx="42" cy="60" r="3.4" fill="${colors[0]}"/>
+    </svg>`;
+  }
+
+  const grid = document.getElementById("fishGrid");
+  const resultCount = document.getElementById("resultCount");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const searchInput = document.getElementById("searchInput");
+  let activeCat = "All";
+
+  function render(){
+    let list = activeCat === "All" ? fish : fish.filter(f=>f.cat===activeCat);
+    const q = searchInput.value.trim().toLowerCase();
+    if(q){
+      list = list.filter(f => f.name.toLowerCase().includes(q) || f.local.toLowerCase().includes(q));
+    }
+
+    resultCount.textContent = `Showing ${list.length} of 50 varieties`;
+
+    if(list.length === 0){
+      grid.innerHTML = `<div class="no-results">No fish matched your search. Try a different name.</div>`;
+      return;
+    }
+
+    grid.innerHTML = list.map((f,i)=>{
+      const c1 = palette[i % palette.length];
+      const c2 = palette[(i+3) % palette.length];
+      return `
+      <div class="fish-card">
+        <div class="fish-media" style="background:${c1}">
+          <span class="fish-cat-badge">${f.cat === "Shellfish" ? "Shellfish" : f.cat}</span>
+          ${iconFor(f.cat,[c1,c2])}
+          <img src="${commonsUrl(f.photo)}" alt="${f.name}" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="fish-body">
+          <div class="fish-name">${f.name}</div>
+          ${f.local ? `<div class="fish-local">${f.local}</div>` : ""}
+          <div class="fish-desc">${f.desc}</div>
+          <div class="fish-foot">
+            <div class="fish-price">₹${f.price} <small>per kg</small></div>
+            <a class="fish-order" href="order.html">Order</a>
+          </div>
+        </div>
+      </div>`;
+    }).join("");
+  }
+
+  filterBtns.forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      filterBtns.forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      activeCat = btn.dataset.cat;
+      render();
+    });
+  });
+
+  searchInput.addEventListener("input", render);
+
+  render();
+</script>
 
 <script>
 (function(){
