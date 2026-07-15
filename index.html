@@ -34,6 +34,10 @@ width:90%;
 max-width:1200px;
 margin:auto;
 }
+header .container{
+max-width:1400px;
+width:94%;
+}
 /* Display font for headings / logo */
 .logo,
 .hero h1,
@@ -81,7 +85,7 @@ color:#ff5a1f;
 }
 nav ul{
 display:flex;
-gap:26px;
+gap:20px;
 list-style:none;
 flex-wrap:nowrap;
 }
@@ -107,6 +111,7 @@ color:#ff5a1f;
 display:flex;
 align-items:center;
 gap:22px;
+flex-shrink:0;
 }
 .call-info{
 display:flex;
@@ -125,18 +130,18 @@ font-weight:800;
 header.scrolled .call-info{
 color:#333;
 }
-@media(max-width:1180px){
+@media(max-width:1300px){
 .call-info{
 display:none;
 }
 nav ul{
-gap:18px;
+gap:16px;
 }
 nav ul li a{
 font-size:12.5px;
 }
 .nav-right{
-gap:14px;
+gap:12px;
 }
 }
 .btn{
