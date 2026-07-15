@@ -81,16 +81,21 @@ color:#ff5a1f;
 }
 nav ul{
 display:flex;
-gap:32px;
+gap:26px;
 list-style:none;
+flex-wrap:nowrap;
+}
+nav ul li{
+white-space:nowrap;
 }
 nav ul li a{
 color:#fff;
 font-weight:600;
-font-size:14px;
-letter-spacing:.03em;
+font-size:13.5px;
+letter-spacing:.02em;
 text-transform:uppercase;
 transition:.3s;
+white-space:nowrap;
 }
 header.scrolled nav ul li a{
 color:#333;
@@ -119,6 +124,20 @@ font-weight:800;
 }
 header.scrolled .call-info{
 color:#333;
+}
+@media(max-width:1180px){
+.call-info{
+display:none;
+}
+nav ul{
+gap:18px;
+}
+nav ul li a{
+font-size:12.5px;
+}
+.nav-right{
+gap:14px;
+}
 }
 .btn{
 background:#e63946;
