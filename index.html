@@ -34,10 +34,6 @@ width:90%;
 max-width:1200px;
 margin:auto;
 }
-header .container{
-max-width:1400px;
-width:94%;
-}
 /* Display font for headings / logo */
 .logo,
 .hero h1,
@@ -85,7 +81,7 @@ color:#ff5a1f;
 }
 nav ul{
 display:flex;
-gap:20px;
+gap:28px;
 list-style:none;
 flex-wrap:nowrap;
 }
@@ -112,37 +108,6 @@ display:flex;
 align-items:center;
 gap:22px;
 flex-shrink:0;
-}
-.call-info{
-display:flex;
-align-items:center;
-gap:8px;
-color:#fff;
-font-size:13.5px;
-font-weight:600;
-letter-spacing:.02em;
-white-space:nowrap;
-transition:color .3s ease;
-}
-.call-info b{
-font-weight:800;
-}
-header.scrolled .call-info{
-color:#333;
-}
-@media(max-width:1300px){
-.call-info{
-display:none;
-}
-nav ul{
-gap:16px;
-}
-nav ul li a{
-font-size:12.5px;
-}
-.nav-right{
-gap:12px;
-}
 }
 .btn{
 background:#e63946;
@@ -478,9 +443,6 @@ margin:10px 0;
 nav ul{
 display:none;
 }
-.call-info{
-display:none;
-}
 .hero h1{
 font-size:36px;
 }
@@ -571,7 +533,6 @@ body.nav-open{overflow:hidden;}
 <li><a href="contact.html">Contact</a></li>
 </ul>
 <div class="nav-right">
-<a href="tel:+918431083956" class="call-info">CALL NOW! 📞 <b>+91 84310 83956</b></a>
 <a href="order.html" class="btn">Order Now</a>
 <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
 </div>
