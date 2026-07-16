@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="logo.png">
-<title>Saha Fin — 20 Mutton Varieties & Cuts</title>
+<title>Saha Fin — 20 Chicken Varieties & Cuts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,22 +38,22 @@
   @media (max-width:900px){nav.main-nav{display:none;}}
 
   .page-hero{
-    background:linear-gradient(120deg,#2a0f10 0%,#4a1a17 55%,#0B2027 100%);
+    background:linear-gradient(120deg,#2b1710 0%,#3d2317 55%,#0B2027 100%);
     color:#fff;padding:56px 40px 40px;position:relative;overflow:hidden;
   }
   .page-hero::before{
     content:"";position:absolute;inset:0;opacity:.5;
     background:radial-gradient(circle at 85% 20%, rgba(232,101,76,0.32), transparent 40%),
-               radial-gradient(circle at 15% 80%, rgba(217,164,65,0.22), transparent 45%);
+               radial-gradient(circle at 15% 80%, rgba(217,164,65,0.25), transparent 45%);
   }
   .page-hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1;}
   .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
   .hero-eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);}
   .page-hero h1{font-size:clamp(30px,4.4vw,46px);line-height:1.06;max-width:640px;}
-  .page-hero p{color:#e9d5cf;font-size:15.5px;margin-top:14px;max-width:560px;line-height:1.65;}
+  .page-hero p{color:#e7d8cf;font-size:15.5px;margin-top:14px;max-width:560px;line-height:1.65;}
   .hero-count{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap;}
   .hero-count .num{font-family:'Fraunces',serif;font-size:28px;color:#fff;}
-  .hero-count .lbl{font-size:12px;color:#dcc0b8;text-transform:uppercase;letter-spacing:.08em;}
+  .hero-count .lbl{font-size:12px;color:#d9c3b5;text-transform:uppercase;letter-spacing:.08em;}
 
   .wrap{max-width:1240px;margin:0 auto;padding:40px 40px 70px;}
   .controls{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
@@ -149,8 +149,8 @@ body.nav-open{overflow:hidden;}
     <a href="product.html">Products</a>
     <a href="order.html">Order Now</a>
     <a href="fish.html">Fish</a>
-    <a href="chicken.html">Chicken</a>
-    <a href="mutton.html" class="active">Mutton</a>
+    <a href="chicken.html" class="active">Chicken</a>
+    <a href="mutton.html">Mutton</a>
     <a href="contact.html">Contact</a>
   </nav>
   <a class="header-cta" href="order.html">Order Now</a>
@@ -177,8 +177,8 @@ body.nav-open{overflow:hidden;}
     <a href="sarvices.html"><span class="mnp-ico">⚙️</span>Services</a>
     <a href="contact.html"><span class="mnp-ico">☎️</span>Contact</a>
     <a href="fish.html"><span class="mnp-ico">🐟</span>Fish</a>
-    <a href="chicken.html"><span class="mnp-ico">🍗</span>Chicken</a>
-    <a href="mutton.html" class="active-link"><span class="mnp-ico">🥩</span>Mutton</a>
+    <a href="chicken.html" class="active-link"><span class="mnp-ico">🍗</span>Chicken</a>
+    <a href="mutton.html"><span class="mnp-ico">🥩</span>Mutton</a>
     <a href="varieties.html"><span class="mnp-ico">🎣</span>Varieties</a>
     <a href="order.html" class="mobile-cta"><span class="mnp-ico">🛒</span>Order Now</a>
   </div>
@@ -190,8 +190,8 @@ body.nav-open{overflow:hidden;}
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="hero-eyebrow">Full Catalogue</div>
-    <h1>20 Mutton Varieties & Cuts</h1>
-    <p>From everyday curry cut to specialty cuts and offal — fresh goat meat, trimmed and delivered the same day.</p>
+    <h1>20 Chicken Varieties & Cuts</h1>
+    <p>From everyday curry cut to specialty cuts and offal — cleaned, trimmed, and delivered fresh the same day.</p>
     <div class="hero-count">
       <div><div class="num">20</div><div class="lbl">Varieties</div></div>
       <div><div class="num">3</div><div class="lbl">Categories</div></div>
@@ -223,29 +223,29 @@ body.nav-open{overflow:hidden;}
 
 <script>
   const items = [
-    { name:"Mutton Curry Cut", local:"Bone-in, mixed", cat:"Bone-in", desc:"Classic curry cut, everyday favourite", price:780, photo:"Goat_Meat_5983.JPG" },
-    { name:"Mutton Boneless", local:"", cat:"Boneless", desc:"Lean cuts, trimmed and ready", price:920, photo:"Boneless_mutton.jpg" },
-    { name:"Mutton Chops", local:"", cat:"Bone-in", desc:"Rib chops, great for grilling", price:850, photo:"Goat_chops.jpg" },
-    { name:"Mutton Liver", local:"Kaleji", cat:"Offal", desc:"Fresh, cleaned, iron-rich", price:420, photo:"Mutton_liver.jpg" },
-    { name:"Mutton Kidney", local:"Gurda", cat:"Offal", desc:"Cleaned, popular in fry dishes", price:400, photo:"Mutton_kidney.jpg" },
-    { name:"Mutton Leg (Whole)", local:"Raan", cat:"Bone-in", desc:"Whole leg, great for roasting", price:900, photo:"Leg_of_lamb.jpg" },
-    { name:"Mutton Shoulder", local:"", cat:"Bone-in", desc:"Well-marbled, great for slow cook", price:820, photo:"Lamb_shoulder.jpg" },
-    { name:"Mutton Ribs", local:"", cat:"Bone-in", desc:"Meaty ribs, perfect for curry", price:780, photo:"Lamb_ribs.jpg" },
-    { name:"Mutton Keema", local:"Mince", cat:"Boneless", desc:"Freshly minced, kebab & curry ready", price:850, photo:"Mutton_keema.jpg" },
-    { name:"Mutton Head Curry Cut", local:"Paya-style", cat:"Bone-in", desc:"Traditional cut for rich curries", price:600, photo:"Mutton_head.jpg" },
-    { name:"Mutton Trotters", local:"Paya", cat:"Offal", desc:"Cleaned, classic for paya soup", price:450, photo:"Mutton_paya.jpg" },
-    { name:"Mutton Tripe", local:"Ozhal", cat:"Offal", desc:"Cleaned tripe, chettinad favourite", price:400, photo:"Mutton_tripe.jpg" },
-    { name:"Mutton Sukka Cut", local:"", cat:"Boneless", desc:"Small pieces for dry roast", price:820, photo:"Mutton_sukka.jpg" },
-    { name:"Mutton Biryani Cut", local:"", cat:"Bone-in", desc:"Bone-in pieces sized for biryani", price:800, photo:"Mutton_biryani_cut.jpg" },
-    { name:"Mutton Rib Chops", local:"", cat:"Bone-in", desc:"Individually cut chops", price:880, photo:"Lamb_chops.jpg" },
-    { name:"Mutton Neck", local:"", cat:"Bone-in", desc:"Rich, great for slow-cooked stews", price:700, photo:"Mutton_neck.jpg" },
-    { name:"Mutton Shank", local:"Nalli", cat:"Bone-in", desc:"Bone marrow cut, nihari favourite", price:750, photo:"Lamb_shank.jpg" },
-    { name:"Mutton Brain", local:"Bheja", cat:"Offal", desc:"Cleaned, delicacy fry item", price:380, photo:"Mutton_brain.jpg" },
-    { name:"Mutton Rack", local:"", cat:"Bone-in", desc:"Premium rack, restaurant favourite", price:1100, photo:"Rack_of_lamb.jpg" },
-    { name:"Mutton Stew Cut", local:"", cat:"Bone-in", desc:"Chunky pieces for hearty stews", price:780, photo:"Goat_Meat_5983.JPG" },
+    { name:"Chicken Curry Cut", local:"Bone-in, mixed pieces", cat:"Bone-in", desc:"Everyday favourite, curry ready", price:220, photo:"Raw_chicken.jpg" },
+    { name:"Chicken Boneless", local:"", cat:"Boneless", desc:"Trimmed, ready for gravies", price:320, photo:"Raw_chicken_slices.jpg" },
+    { name:"Chicken Breast Fillet", local:"", cat:"Boneless", desc:"Lean cut, great for grilling", price:340, photo:"Raw_chicken_slices.jpg" },
+    { name:"Chicken Drumsticks", local:"", cat:"Bone-in", desc:"Skin-on, 8–10 pieces per kg", price:260, photo:"Chicken_drumsticks_and_legs.jpg" },
+    { name:"Chicken Thighs", local:"", cat:"Bone-in", desc:"Juicy, great for slow cooking", price:270, photo:"Chicken_drumsticks_and_legs.jpg" },
+    { name:"Chicken Wings", local:"", cat:"Bone-in", desc:"Party cut, perfect for frying", price:250, photo:"Chicken_wings.jpg" },
+    { name:"Chicken Lollipop", local:"", cat:"Bone-in", desc:"Frenched drumettes, starter favourite", price:320, photo:"Chicken_lollipop.jpg" },
+    { name:"Chicken Full Leg Piece", local:"", cat:"Bone-in", desc:"Thigh + drumstick, whole", price:260, photo:"Chicken_leg_piece.jpg" },
+    { name:"Chicken Liver", local:"", cat:"Offal", desc:"Fresh, cleaned, iron-rich", price:180, photo:"Chicken_Livers.jpg" },
+    { name:"Chicken Gizzard", local:"", cat:"Offal", desc:"Cleaned, great for stir-fry", price:180, photo:"Chicken_gizzard.jpg" },
+    { name:"Chicken Keema", local:"Mince", cat:"Boneless", desc:"Freshly minced, kebab & curry ready", price:300, photo:"Chicken_mince.jpg" },
+    { name:"Whole Chicken (Skin-on)", local:"", cat:"Bone-in", desc:"Cleaned whole bird, ~1.1–1.3kg", price:240, photo:"Raw_chicken.jpg" },
+    { name:"Whole Chicken (Skinless)", local:"", cat:"Bone-in", desc:"Cleaned & skinned whole bird", price:260, photo:"Skinless_chicken.jpg" },
+    { name:"Chicken Neck", local:"", cat:"Offal", desc:"Great for stock & curry", price:140, photo:"Chicken_neck.jpg" },
+    { name:"Chicken Feet", local:"Paya", cat:"Offal", desc:"Cleaned, popular for soup base", price:120, photo:"Chicken_feet.jpg" },
+    { name:"Country Chicken", local:"Naatu Kozhi", cat:"Bone-in", desc:"Free-range, firmer & richer taste", price:420, photo:"Country_chicken.jpg" },
+    { name:"Chicken Thigh Mince", local:"", cat:"Boneless", desc:"Juicier mince, great for kebabs", price:320, photo:"Chicken_mince.jpg" },
+    { name:"Chicken Tandoori Cut", local:"8-piece cut", cat:"Bone-in", desc:"Skinless, marinade-ready cut", price:280, photo:"Tandoori_chicken_cut.jpg" },
+    { name:"Chicken Breast Cubes", local:"", cat:"Boneless", desc:"Boneless cubes, ready for skewers", price:340, photo:"Chicken_breast_cubes.jpg" },
+    { name:"Chicken Skin", local:"", cat:"Offal", desc:"For stock or crisping", price:100, photo:"Chicken_skin.jpg" },
   ];
 
-  const palette = ["#0B2027","#8f3223","#C94E37","#D9A441","#1F6363","#4a1a17","#2E8B8B","#4a5a8c","#E8654C","#123a3f"];
+  const palette = ["#0B2027","#8f3223","#C94E37","#D9A441","#1F6363","#3d2317","#2E8B8B","#4a5a8c","#E8654C","#123a3f"];
 
   function commonsUrl(filename){
     return "https://commons.wikimedia.org/wiki/Special:FilePath/" + encodeURIComponent(filename) + "?width=400";
@@ -254,9 +254,9 @@ body.nav-open{overflow:hidden;}
   function iconFor(colors){
     return `<svg viewBox="0 0 200 132" preserveAspectRatio="xMidYMid slice">
       <rect width="200" height="132" fill="${colors[0]}"/>
-      <path d="M60 100 L80 40 L120 40 L140 100 Z" fill="${colors[1]}" opacity="0.92"/>
-      <circle cx="70" cy="34" r="9" fill="${colors[1]}"/>
-      <circle cx="130" cy="34" r="9" fill="${colors[1]}"/>
+      <ellipse cx="100" cy="70" rx="55" ry="42" fill="${colors[1]}" opacity="0.92"/>
+      <ellipse cx="150" cy="52" rx="16" ry="13" fill="${colors[1]}"/>
+      <circle cx="155" cy="48" r="2.6" fill="${colors[0]}"/>
     </svg>`;
   }
 
@@ -291,7 +291,7 @@ body.nav-open{overflow:hidden;}
           <div class="fish-desc">${f.desc}</div>
           <div class="fish-foot">
             <div class="fish-price">₹${f.price} <small>per kg</small></div>
-            <a class="fish-order" href="order.html">Order</a>
+            <a class="fish-order" href="order.html?add=${encodeURIComponent(f.name)}&amp;price=${f.price}&amp;cat=Chicken">Order</a>
           </div>
         </div>
       </div>`;
