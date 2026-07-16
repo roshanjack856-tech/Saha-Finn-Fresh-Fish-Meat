@@ -367,7 +367,7 @@ body.nav-open{overflow:hidden;}
           <div class="fish-desc">${f.desc}</div>
           <div class="fish-foot">
             <div class="fish-price">₹${f.price} <small>per kg</small></div>
-            <a class="fish-order" href="order.html">Order</a>
+            <a class="fish-order" href="order.html?add=${encodeURIComponent(f.name)}&amp;price=${f.price}&amp;cat=Fish">Order</a>
           </div>
         </div>
       </div>`;
