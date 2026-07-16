@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Saha Finn Services - Premium Cloud Kitchen and Fresh Fish & Meat Delivery. Freshly prepared meals and hygienic delivery right to your doorstep.">
-    <title>Services | Saha Finn - Fresh Fish, Meat & Cloud Kitchen Delivery</title>
+<link rel="icon" type="image/png" href="logo.png">
+    <meta name="description" content="Saha Fin Services - Premium Cloud Kitchen and Fresh Fish & Meat Delivery. Freshly prepared meals and hygienic delivery right to your doorstep.">
+    <title>Services | Saha Fin - Fresh Fish, Meat & Cloud Kitchen Delivery</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +13,7 @@
     
     <style>
         /* ==========================================================================
-           Saha Finn CSS Stylesheet (Embedded)
+           Saha Fin CSS Stylesheet (Embedded)
            Design Style: Light page background, dark hero banner (matches reference)
            ========================================================================== */
 
@@ -301,27 +302,46 @@
 
         /* ---------- standard slide-in mobile menu (site-wide) ---------- */
         /* ---------- Unified mobile hamburger + slide-in menu ---------- */
-.menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;background:transparent;border:none;cursor:pointer;z-index:1002;position:relative;}
-.menu-toggle span{width:24px;height:2px;background:#222;border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease;}
+.menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:46px;height:46px;border:none;border-radius:14px;background:linear-gradient(135deg,#0E9F6E,#ff5a1f);cursor:pointer;z-index:1002;position:relative;box-shadow:0 10px 20px rgba(0,0,0,.12);}
+.menu-toggle span{width:22px;height:2.5px;background:#fff;border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease;}
 .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .menu-toggle.active span:nth-child(2){opacity:0;}
 .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-nav-overlay{position:fixed;inset:0;background:rgba(10,8,14,.25);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .35s ease;z-index:1000;}
+.mobile-nav-overlay{position:fixed;inset:0;background:rgba(3,8,16,.68);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;z-index:1000;}
 .mobile-nav-overlay.active{opacity:1;visibility:visible;}
-.mobile-nav-panel{position:fixed;top:0;left:0;height:100vh;height:100dvh;width:78%;max-width:300px;background:rgba(20,22,26,.42);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border-right:1px solid rgba(255,255,255,.15);z-index:1001;box-shadow:20px 0 60px rgba(0,0,0,.25);transform:translateX(-100%);transition:transform .45s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;padding:34px 34px 40px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;font-family:'Unbounded','Poppins',sans-serif;}
-.mobile-nav-panel.active{transform:translateX(0);}
-.mnp-brand{display:flex;align-items:center;gap:12px;padding-bottom:22px;margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,.15);flex-shrink:0;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease;}
-.mobile-nav-panel.active .mnp-brand{opacity:1;transform:translateX(0);}
-.mnp-brand .mnp-mark{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
-.mnp-brand .mnp-name{color:#fff;font-weight:700;font-size:17px;line-height:1.2;}
-.mnp-brand .mnp-tag{color:#c9c9c9;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
-.mnp-list{display:flex;flex-direction:column;flex:1;justify-content:center;}
-.mnp-item{display:flex;align-items:center;gap:18px;padding:15px 4px;color:#f3eef2;font-weight:500;font-size:16px;letter-spacing:.01em;opacity:0;transform:translateX(-16px);transition:opacity .4s ease,transform .4s ease,color .2s ease,padding-left .2s ease;text-decoration:none;}
-.mobile-nav-panel.active .mnp-item{opacity:1;transform:translateX(0);}
-.mnp-item .mnp-ico{width:22px;flex-shrink:0;text-align:center;font-size:17px;opacity:.9;}
-.mnp-item:hover,.mnp-item.active{color:#FF9B73;padding-left:10px;}
+.mobile-nav-panel{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;background:radial-gradient(circle at top right,rgba(255,90,31,.14),transparent 32%),radial-gradient(circle at bottom left,rgba(14,159,110,.14),transparent 30%),rgba(10,16,24,.22);backdrop-filter:blur(38px) saturate(160%);-webkit-backdrop-filter:blur(38px) saturate(160%);transform:translateY(-100%);transition:transform .5s cubic-bezier(.16,1,.3,1);z-index:1001;display:flex;flex-direction:column;padding:18px 18px 22px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:'Unbounded','Poppins',sans-serif;}
+.mobile-nav-panel.active{transform:translateY(0);}
+.mnp-head{position:static;display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 4px 18px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:18px;flex-shrink:0;}
+.mnp-brand{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;}
+.mnp-mark{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,#0E9F6E,#ff5a1f);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:0 12px 24px rgba(0,0,0,.25);flex-shrink:0;overflow:hidden;}
+.mnp-name{color:#fff;font-weight:700;font-size:16px;line-height:1.2;}
+.mnp-tag{color:#a9d2cc;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
+.close-btn{position:absolute;top:14px;right:14px;width:40px;height:40px;border:none;border-radius:12px;background:rgba(255,255,255,.08);color:#fff;font-size:20px;cursor:pointer;flex-shrink:0;z-index:5;}
+.mobile-nav-links{display:flex;flex-direction:column;gap:10px;margin:10px auto 0;width:100%;max-width:250px;}
+.mobile-nav-panel a{display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 16px;border-radius:16px;color:#eef5f3;font-size:15px;font-weight:600;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);transform:translateY(18px);opacity:0;transition:transform .45s ease,opacity .45s ease,background .2s ease,color .2s ease;text-decoration:none;}
+.mobile-nav-panel.active a{transform:translateY(0);opacity:1;}
+.mobile-nav-panel.active a:nth-child(1){transition-delay:.05s;}
+.mobile-nav-panel.active a:nth-child(2){transition-delay:.10s;}
+.mobile-nav-panel.active a:nth-child(3){transition-delay:.15s;}
+.mobile-nav-panel.active a:nth-child(4){transition-delay:.20s;}
+.mobile-nav-panel.active a:nth-child(5){transition-delay:.25s;}
+.mobile-nav-panel.active a:nth-child(6){transition-delay:.30s;}
+.mobile-nav-panel.active a:nth-child(7){transition-delay:.35s;}
+.mobile-nav-panel.active a:nth-child(8){transition-delay:.40s;}
+.mobile-nav-panel.active a:nth-child(9){transition-delay:.45s;}
+.mobile-nav-panel.active a:nth-child(10){transition-delay:.50s;}
+.mobile-nav-panel.active a:nth-child(11){transition-delay:.55s;}
+.mobile-nav-panel a:hover,
+.mobile-nav-panel a.active-link{background:rgba(255,255,255,.12);color:#ffb08f;}
+.mnp-ico{width:22px;text-align:center;font-size:15px;flex-shrink:0;}
+.mobile-cta{margin-top:8px;background:linear-gradient(135deg,#ff5a1f,#e84b18);color:#fff !important;justify-content:center;border:none !important;box-shadow:0 16px 30px rgba(232,75,24,.28);}
+.mobile-footer{margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.72);font-size:13px;text-align:center;flex-shrink:0;}
 body.nav-open{overflow:hidden;}
 @media (max-width:900px){.menu-toggle{display:flex;}}
+@media (max-width:500px){
+.mobile-nav-panel{padding:16px 14px 18px;}
+.mobile-nav-panel a{padding:13px 14px;border-radius:14px;}
+}
 
         main {
             margin-top: 72px;
@@ -1078,10 +1098,10 @@ body.nav-open{overflow:hidden;}
         <div class="nav-container">
             <a href="index.html" class="brand-logo">
                 <div class="logo-icon">
-                    <img src="logo.png" alt="Saha Finn logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                    <img src="logo.png" alt="Saha Fin logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
                 </div>
                 <div class="logo-text">
-                    <span class="brand-name">Saha Finn</span>
+                    <span class="brand-name">Saha Fin</span>
                     <span class="brand-tagline">FRESH FISH & MEAT</span>
                 </div>
             </a>
@@ -1103,26 +1123,32 @@ body.nav-open{overflow:hidden;}
     </header>
 
     <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-<nav class="mobile-nav-panel" id="mobileNavPanel">
-  <div class="mnp-brand">
-    <div class="mnp-mark"><img src="logo.png" alt="Saha Finn" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
-    <div>
-      <div class="mnp-name">Saha Finn</div>
-      <div class="mnp-tag">Fresh Fish &amp; Meat</div>
+<nav class="mobile-nav-panel" id="mobileNavPanel" aria-label="Mobile navigation">
+  <div class="mnp-head">
+    <div class="mnp-brand">
+      <div class="mnp-mark"><img src="logo.png" alt="Saha Fin" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+      <div>
+        <div class="mnp-name">Saha Fin</div>
+        <div class="mnp-tag">Fresh Fish &amp; Meat</div>
+      </div>
     </div>
+    <button class="close-btn" id="closeMenu" aria-label="Close menu">&times;</button>
   </div>
-  <div class="mnp-list">
-    <a href="index.html" class="mnp-item"><span class="mnp-ico">🏠</span>Home</a>
-    <a href="about.html" class="mnp-item"><span class="mnp-ico">ℹ️</span>About Us</a>
-    <a href="product.html" class="mnp-item"><span class="mnp-ico">🛒</span>Products</a>
-    <a href="shop.html" class="mnp-item"><span class="mnp-ico">🛍️</span>Shop</a>
-    <a href="sarvices.html" class="mnp-item active"><span class="mnp-ico">🧰</span>Services</a>
-    <a href="Contact.html" class="mnp-item"><span class="mnp-ico">✉️</span>Contact</a>
-    <a href="Fish.html" class="mnp-item"><span class="mnp-ico">🐟</span>Fish</a>
-    <a href="chicken.html" class="mnp-item"><span class="mnp-ico">🍗</span>Chicken</a>
-    <a href="mutton.html" class="mnp-item"><span class="mnp-ico">🥩</span>Mutton</a>
-    <a href="varieties.html" class="mnp-item"><span class="mnp-ico">🎣</span>Varieties</a>
-    <a href="order.html" class="mnp-item"><span class="mnp-ico">📦</span>Order Now</a>
+  <div class="mobile-nav-links">
+    <a href="index.html"><span class="mnp-ico">🏠</span>Home</a>
+    <a href="about.html"><span class="mnp-ico">ℹ️</span>About Us</a>
+    <a href="product.html"><span class="mnp-ico">🛍️</span>Products</a>
+    <a href="shop.html"><span class="mnp-ico">🏬</span>Shop</a>
+    <a href="sarvices.html" class="active-link"><span class="mnp-ico">⚙️</span>Services</a>
+    <a href="contact.html"><span class="mnp-ico">☎️</span>Contact</a>
+    <a href="fish.html"><span class="mnp-ico">🐟</span>Fish</a>
+    <a href="chicken.html"><span class="mnp-ico">🍗</span>Chicken</a>
+    <a href="mutton.html"><span class="mnp-ico">🥩</span>Mutton</a>
+    <a href="varieties.html"><span class="mnp-ico">🎣</span>Varieties</a>
+    <a href="order.html" class="mobile-cta"><span class="mnp-ico">🛒</span>Order Now</a>
+  </div>
+  <div class="mobile-footer">
+    Fresh fish and meat, delivered with trust and freshness.
   </div>
 </nav>
 
@@ -1157,7 +1183,7 @@ body.nav-open{overflow:hidden;}
                 </div>
                 <div class="hero-image-wrapper reveal-fade-up">
                     <div class="hero-image-card">
-                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80" alt="Premium gourmet seafood platter prepared at Saha Finn" class="hero-img">
+                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80" alt="Premium gourmet seafood platter prepared at Saha Fin" class="hero-img">
                         <div class="image-overlay-glow"></div>
                     </div>
                 </div>
@@ -1399,7 +1425,7 @@ body.nav-open{overflow:hidden;}
             <div class="section-container kitchen-grid">
                 <div class="kitchen-image-wrapper reveal-fade-up">
                     <div class="kitchen-image-card">
-                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Modern Saha Finn Cloud Kitchen Facility" class="kitchen-img">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Modern Saha Fin Cloud Kitchen Facility" class="kitchen-img">
                         <div class="kitchen-overlay-glow"></div>
                     </div>
                 </div>
@@ -1556,14 +1582,14 @@ body.nav-open{overflow:hidden;}
             <div class="footer-col brand-col">
                 <a href="index.html" class="brand-logo footer-logo">
                     <div class="logo-icon">
-                        <img src="logo.png" alt="Saha Finn logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                        <img src="logo.png" alt="Saha Fin logo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
                     </div>
                     <div class="logo-text">
-                        <span class="brand-name white-text">Saha Finn</span>
+                        <span class="brand-name white-text">Saha Fin</span>
                         <span class="brand-tagline">FRESH FISH & MEAT</span>
                     </div>
                 </a>
-                <p class="footer-brand-desc">Saha Finn is Pondicherry's leading culinary cloud kitchen and direct-to-home raw fish & meat delivery network, bringing freshness and purity with every pack.</p>
+                <p class="footer-brand-desc">Saha Fin is Pondicherry's leading culinary cloud kitchen and direct-to-home raw fish & meat delivery network, bringing freshness and purity with every pack.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/></svg>
@@ -1625,7 +1651,7 @@ body.nav-open{overflow:hidden;}
         
         <div class="footer-bottom">
             <div class="section-container bottom-flex">
-                <p>&copy; 2026 Saha Finn. All Rights Reserved.</p>
+                <p>&copy; 2026 Saha Fin. All Rights Reserved.</p>
                 <div class="bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -1641,7 +1667,7 @@ body.nav-open{overflow:hidden;}
             const toggle = document.getElementById('menuToggle');
             const overlay = document.getElementById('mobileNavOverlay');
             const panel = document.getElementById('mobileNavPanel');
-            const closeBtn = document.getElementById('mnpClose');
+            const closeBtn = document.getElementById('closeMenu');
 
             if (toggle && overlay && panel) {
                 function closeMenu(){
@@ -1753,5 +1779,40 @@ body.nav-open{overflow:hidden;}
             });
         });
     </script>
+
+<!-- Floating quick-contact + back-to-top (added for easier ordering/contact) -->
+<style>
+.quick-actions{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;align-items:flex-end;gap:12px;z-index:1200;}
+.qa-btn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.25);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease;border:none;cursor:pointer;}
+.qa-btn:hover{transform:translateY(-3px) scale(1.05);}
+.qa-top{width:42px;height:42px;font-size:18px;background:#222;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease,visibility .3s;}
+.qa-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.mobile-order-bar{position:fixed;left:0;right:0;bottom:0;display:none;background:#fff;box-shadow:0 -6px 20px rgba(0,0,0,.12);z-index:1150;padding:10px 14px;gap:10px;align-items:center;}
+.mobile-order-bar a{flex:1;text-align:center;padding:13px 10px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;font-family:'Unbounded',sans-serif;}
+.mob-call{background:#f1f1f1;color:#222;}
+.mob-order{background:#e63946;color:#fff;}
+@media(max-width:900px){
+.mobile-order-bar{display:flex;}
+body{padding-bottom:70px;}
+.quick-actions{bottom:82px;}
+}
+</style>
+<div class="quick-actions">
+<button class="qa-btn qa-top" id="qaTop" aria-label="Back to top">&#8593;</button>
+</div>
+<div class="mobile-order-bar">
+<a href="tel:+918431083956" class="mob-call">&#128222; Call Now</a>
+<a href="order.html" class="mob-order">Order Now</a>
+</div>
+<script>
+(function(){
+var topBtn=document.getElementById('qaTop');
+if(!topBtn) return;
+window.addEventListener('scroll',function(){
+if(window.scrollY>400){topBtn.classList.add('show');}else{topBtn.classList.remove('show');}
+});
+topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
 </body>
 </html>
