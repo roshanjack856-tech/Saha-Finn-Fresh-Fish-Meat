@@ -334,6 +334,7 @@ body.nav-open{overflow:hidden;}
               <option>Cash on Delivery</option>
               <option>UPI on Delivery</option>
               <option>Pay Now via UPI Link</option>
+              <option>Credit / Debit Card</option>
             </select>
           </div>
         </div>
@@ -533,6 +534,37 @@ body.nav-open{overflow:hidden;}
 
   renderGrid();
   renderCart();
+
+  // ---- Auto-add an item when arriving from another page's "Order" link ----
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+    const addName = params.get('add');
+    if(!addName) return;
+
+    const decodedName = decodeURIComponent(addName);
+    const priceParam = parseFloat(params.get('price'));
+    const catParam = params.get('cat') ? decodeURIComponent(params.get('cat')) : 'Fish';
+
+    let match = products.find(p => p.name.toLowerCase() === decodedName.toLowerCase());
+    if(!match){
+      match = { name: decodedName, cat: catParam, desc: "Added from product page", price: isNaN(priceParam) ? 0 : priceParam };
+      products.push(match);
+    }
+
+    activeCat = match.cat;
+    filterBtns.forEach(b=>{
+      b.classList.toggle("active", b.dataset.cat === match.cat);
+    });
+
+    quickAdd(match.name);
+    renderGrid();
+    renderCart();
+    showToast(`Added ${match.name} to your order!`);
+
+    setTimeout(()=>{
+      document.querySelector(".cart-card")?.scrollIntoView({behavior:"smooth", block:"start"});
+    }, 300);
+  })();
 
   // ---- Order submission via WhatsApp ----
   const WHATSAPP_NUMBER = "918431083956";
