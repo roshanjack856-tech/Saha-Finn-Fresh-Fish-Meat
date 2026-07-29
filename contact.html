@@ -490,23 +490,27 @@ body.nav-open{overflow:hidden;}
 
 <script>
 (function(){
+  const wrap = document.querySelector('.nav-dropdown');
   const btn = document.getElementById('contactDropdownBtn');
   const menu = document.getElementById('contactDropdownMenu');
-  if(!btn || !menu) return;
+  if(!wrap || !btn || !menu) return;
+
   function open(){ menu.classList.add('open'); btn.classList.add('open'); }
   function close(){ menu.classList.remove('open'); btn.classList.remove('open'); }
-  function toggle(e){
+
+  // Desktop: open on mouse hover, close when the mouse leaves.
+  wrap.addEventListener('mouseenter', open);
+  wrap.addEventListener('mouseleave', close);
+
+  // Touch / keyboard: tapping the button toggles it instead.
+  btn.addEventListener('click', function(e){
     e.stopPropagation();
     menu.classList.contains('open') ? close() : open();
-  }
-  btn.addEventListener('click', toggle);
+  });
   document.addEventListener('click', (e)=>{
     if(!menu.contains(e.target) && e.target!==btn) close();
   });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
-
-  // This is the Contact page itself — open the menu automatically on load.
-  window.addEventListener('DOMContentLoaded', open);
 })();
 </script>
 
