@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo.png">
+<title>Saha Fin — Refund &amp; Cancellation Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B2027; --paper:#F7FAF9; --coral:#E8654C; --coral-deep:#C94E37;
+    --teal:#2E8B8B; --teal-deep:#1F6363; --line:#DCE6E3; --text:#1C2B2E;
+    --text-dim:#5A6B6D; --gold:#D9A441; --radius:14px;
+    --shadow:0 12px 28px -14px rgba(11,32,39,0.28);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--text);font-family:'Work Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Fraunces',serif;font-weight:700;letter-spacing:-0.01em;color:var(--ink);margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  ::selection{background:var(--coral);color:#fff;}
 
+  .site-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;max-width:1240px;margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo .mark{width:58px;height:58px;flex-shrink:0;}
+  .logo .word{font-family:'Fraunces',serif;font-size:21px;font-weight:700;color:var(--ink);line-height:1;}
+  .logo .word small{display:block;font-family:'Work Sans',sans-serif;font-size:10px;letter-spacing:.16em;color:var(--teal-deep);font-weight:600;text-transform:uppercase;margin-top:3px;}
+  nav.main-nav{display:flex;gap:26px;align-items:center;}
+  nav.main-nav a{font-size:14px;font-weight:600;color:var(--text-dim);padding-bottom:4px;border-bottom:2px solid transparent;}
+  nav.main-nav a.active,nav.main-nav a:hover{color:var(--ink);border-color:var(--coral);}
+  .header-cta{background:var(--coral);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:9px;}
+  .header-cta:hover{background:var(--coral-deep);}
+  @media (max-width:960px){nav.main-nav{display:none;}}
+
+  /* ---- Contact dropdown ---- */
+  .nav-dropdown{position:relative;}
+  .nav-dropdown-toggle{font-size:14px;font-weight:600;color:var(--text-dim);display:inline-flex;align-items:center;gap:5px;padding-bottom:4px;border-bottom:2px solid transparent;}
+  .nav-dropdown-toggle:hover,.nav-dropdown-toggle.active{color:var(--ink);border-color:var(--coral);}
+  .nav-dropdown-toggle .caret{font-size:10px;transition:transform .2s ease;}
+  .nav-dropdown-toggle.open .caret{transform:rotate(180deg);}
+  .nav-dropdown-menu{
+    position:absolute;top:calc(100% + 16px);right:0;
+    background:#fff;border-radius:14px;border:1px solid var(--line);
+    box-shadow:0 20px 45px -12px rgba(11,32,39,0.28);
+    min-width:230px;padding:8px;z-index:1100;
+    opacity:0;visibility:hidden;transform:translateY(8px);
+    transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+  }
+  .nav-dropdown-menu.open{opacity:1;visibility:visible;transform:translateY(0);}
+  .nav-dropdown-menu a{
+    display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:9px;
+    font-size:13.5px;font-weight:600;color:var(--text);border-bottom:1px solid var(--line);
+  }
+  .nav-dropdown-menu a:last-child{border-bottom:none;}
+  .nav-dropdown-menu a:hover{background:var(--paper);color:var(--coral-deep);}
+  .nav-dropdown-menu a.active-link{color:var(--coral-deep);}
+  .ndm-ico{width:18px;text-align:center;font-size:15px;flex-shrink:0;}
+
+  .page-hero{
+    background:linear-gradient(120deg,#0B2027 0%,#123a3f 60%,#1a1614 100%);
+    color:#fff;padding:56px 40px 46px;position:relative;overflow:hidden;
+  }
+  .page-hero::before{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(circle at 85% 20%, rgba(232,101,76,0.3), transparent 40%),
+               radial-gradient(circle at 15% 80%, rgba(46,139,139,0.3), transparent 45%);
+  }
+  .page-hero-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;}
+  .hero-eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);}
+  .page-hero h1{font-size:clamp(30px,4.4vw,46px);line-height:1.06;max-width:640px;}
+  .page-hero p{color:#cfe3e0;font-size:15.5px;margin-top:14px;max-width:560px;line-height:1.65;}
+
+  .wrap{max-width:860px;margin:0 auto;padding:54px 40px 80px;}
+  .updated-note{font-size:12.5px;color:var(--text-dim);margin-bottom:34px;}
+  .policy-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px 40px;}
+  .policy-card h2{font-size:20px;margin:34px 0 12px;}
+  .policy-card h2:first-child{margin-top:0;}
+  .policy-card p{font-size:14.5px;color:var(--text-dim);line-height:1.75;margin-bottom:12px;}
+  .policy-card ul{margin:0 0 12px;padding-left:20px;}
+  .policy-card li{font-size:14.5px;color:var(--text-dim);line-height:1.75;margin-bottom:6px;}
+  .policy-card strong{color:var(--ink);}
+  .policy-card a.inline-link{color:var(--teal-deep);font-weight:600;}
+  .policy-card a.inline-link:hover{text-decoration:underline;}
+
+  @media (max-width:600px){
+    .site-header{padding:16px 20px;}
+    .page-hero{padding:44px 20px 34px;}
+    .wrap{padding:36px 20px 60px;}
+    .policy-card{padding:26px 22px;}
+  }
+
+  footer{background:var(--ink);color:#9fb8b4;padding:30px 40px;text-align:center;font-size:13px;}
+  footer a{color:#7fd9b0;font-weight:600;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--coral);outline-offset:2px;}
+
+  /* mobile hamburger + slide-in menu */
+  .menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:46px;height:46px;border:none;border-radius:14px;background:linear-gradient(135deg,#0E9F6E,#ff5a1f);cursor:pointer;z-index:1002;position:relative;box-shadow:0 10px 20px rgba(0,0,0,.12);}
+  .menu-toggle span{width:22px;height:2.5px;background:#fff;border-radius:2px;transition:transform .32s cubic-bezier(.16,1,.3,1),opacity .25s ease;}
+  .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .menu-toggle.active span:nth-child(2){opacity:0;}
+  .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .menu-toggle.active{opacity:0;visibility:hidden;pointer-events:none;}
+  .mobile-nav-overlay{position:fixed;inset:0;background:rgba(3,8,16,.68);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;z-index:1000;}
+  .mobile-nav-overlay.active{opacity:1;visibility:visible;}
+  .mobile-nav-panel{position:fixed;inset:0;width:100%;height:100vh;height:100dvh;background:radial-gradient(circle at top right,rgba(255,90,31,.14),transparent 32%),radial-gradient(circle at bottom left,rgba(14,159,110,.14),transparent 30%),rgba(10,16,24,.22);backdrop-filter:blur(38px) saturate(160%);-webkit-backdrop-filter:blur(38px) saturate(160%);transform:translateY(-100%);transition:transform .5s cubic-bezier(.16,1,.3,1);z-index:1001;display:flex;flex-direction:column;padding:18px 18px 22px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:'Unbounded','Poppins',sans-serif;}
+  .mobile-nav-panel.active{transform:translateY(0);}
+  .mnp-head{position:static;display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 4px 18px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:18px;flex-shrink:0;}
+  .mnp-brand{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;}
+  .mnp-mark{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,#0E9F6E,#ff5a1f);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:0 12px 24px rgba(0,0,0,.25);flex-shrink:0;overflow:hidden;}
+  .mnp-name{color:#fff;font-weight:700;font-size:16px;line-height:1.2;}
+  .mnp-tag{color:#a9d2cc;font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
+  .close-btn{position:absolute;top:14px;right:14px;width:40px;height:40px;border:none;border-radius:12px;background:rgba(255,255,255,.08);color:#fff;font-size:20px;cursor:pointer;flex-shrink:0;z-index:5;}
+  .mobile-nav-links{display:flex;flex-direction:column;gap:10px;margin:10px auto 0;width:100%;max-width:250px;}
+  .mobile-nav-panel a{display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 16px;border-radius:16px;color:#eef5f3;font-size:15px;font-weight:600;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);transform:translateY(18px);opacity:0;transition:transform .45s ease,opacity .45s ease,background .2s ease,color .2s ease;text-decoration:none;}
+  .mobile-nav-panel.active a{transform:translateY(0);opacity:1;}
+  .mobile-nav-panel.active a:nth-child(1){transition-delay:.05s;}
+  .mobile-nav-panel.active a:nth-child(2){transition-delay:.10s;}
+  .mobile-nav-panel.active a:nth-child(3){transition-delay:.15s;}
+  .mobile-nav-panel.active a:nth-child(4){transition-delay:.20s;}
+  .mobile-nav-panel.active a:nth-child(5){transition-delay:.25s;}
+  .mobile-nav-panel.active a:nth-child(6){transition-delay:.30s;}
+  .mobile-nav-panel.active a:nth-child(7){transition-delay:.35s;}
+  .mobile-nav-panel.active a:nth-child(8){transition-delay:.40s;}
+  .mobile-nav-panel.active a:nth-child(9){transition-delay:.45s;}
+  .mobile-nav-panel.active a:nth-child(10){transition-delay:.50s;}
+  .mobile-nav-panel.active a:nth-child(11){transition-delay:.55s;}
+  .mobile-nav-panel.active a:nth-child(12){transition-delay:.60s;}
+  .mobile-nav-panel.active a:nth-child(13){transition-delay:.65s;}
+  .mobile-nav-panel a:hover,.mobile-nav-panel a.active-link{background:rgba(255,255,255,.12);color:#ffb08f;}
+  .mnp-ico{width:22px;text-align:center;font-size:15px;flex-shrink:0;}
+  .mobile-cta{margin-top:8px;background:linear-gradient(135deg,#ff5a1f,#e84b18);color:#fff !important;justify-content:center;border:none !important;box-shadow:0 16px 30px rgba(232,75,24,.28);}
+  .mobile-footer{margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.72);font-size:13px;text-align:center;flex-shrink:0;}
+  body.nav-open{overflow:hidden;}
+  @media (max-width:900px){.menu-toggle{display:flex;}}
+
+  .quick-actions{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;align-items:flex-end;gap:12px;z-index:1200;}
+  .qa-btn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.25);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease;border:none;cursor:pointer;}
+  .qa-btn:hover{transform:translateY(-3px) scale(1.05);}
+  .qa-top{width:42px;height:42px;font-size:18px;background:#222;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease,visibility .3s;}
+  .qa-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+  .mobile-order-bar{position:fixed;left:0;right:0;bottom:0;display:none;background:#fff;box-shadow:0 -6px 20px rgba(0,0,0,.12);z-index:1150;padding:10px 14px;gap:10px;align-items:center;}
+  .mobile-order-bar a{flex:1;text-align:center;padding:13px 10px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;}
+  .mob-call{background:#f1f1f1;color:#222;}
+  .mob-order{background:#e63946;color:#fff;}
+  @media(max-width:900px){.mobile-order-bar{display:flex;} body{padding-bottom:70px;} .quick-actions{bottom:82px;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">
+    <img class="mark" src="logo.png" alt="Saha Fin logo" style="border-radius:50%;object-fit:cover;">
+    <div class="word">Saha Fin<small>Fresh Fish & Meat</small></div>
+  </div>
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="product.html">Products</a>
+    <a href="order.html">Order Now</a>
+    <a href="fish.html">Fish</a>
+    <a href="chicken.html">Chicken</a>
+    <a href="mutton.html">Mutton</a>
+    <div class="nav-dropdown">
+      <button type="button" class="nav-dropdown-toggle active" id="contactDropdownBtn">Contact <span class="caret">▾</span></button>
+      <div class="nav-dropdown-menu" id="contactDropdownMenu">
+        <a href="contact.html"><span class="ndm-ico">☎️</span>Contact Us</a>
+        <a href="privacy-policy.html"><span class="ndm-ico">🔒</span>Privacy Policy</a>
+        <a href="terms-and-conditions.html"><span class="ndm-ico">📜</span>Terms &amp; Conditions</a>
+        <a href="refund-policy.html" class="active-link"><span class="ndm-ico">💸</span>Refund Policy</a>
+      </div>
+    </div>
+  </nav>
+  <a class="header-cta" href="order.html">Order Now</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<nav class="mobile-nav-panel" id="mobileNavPanel" aria-label="Mobile navigation">
+  <div class="mnp-head">
+    <div class="mnp-brand">
+      <div class="mnp-mark"><img src="logo.png" alt="Saha Fin" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+      <div>
+        <div class="mnp-name">Saha Fin</div>
+        <div class="mnp-tag">Fresh Fish &amp; Meat</div>
+      </div>
+    </div>
+    <button class="close-btn" id="closeMenu" aria-label="Close menu">&times;</button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="index.html"><span class="mnp-ico">🏠</span>Home</a>
+    <a href="about.html"><span class="mnp-ico">ℹ️</span>About Us</a>
+    <a href="product.html"><span class="mnp-ico">🛍️</span>Products</a>
+    <a href="fish.html"><span class="mnp-ico">🐟</span>Fish</a>
+    <a href="chicken.html"><span class="mnp-ico">🍗</span>Chicken</a>
+    <a href="mutton.html"><span class="mnp-ico">🥩</span>Mutton</a>
+    <a href="contact.html"><span class="mnp-ico">☎️</span>Contact</a>
+    <a href="privacy-policy.html"><span class="mnp-ico">🔒</span>Privacy Policy</a>
+    <a href="terms-and-conditions.html"><span class="mnp-ico">📜</span>Terms &amp; Conditions</a>
+    <a href="refund-policy.html" class="active-link"><span class="mnp-ico">💸</span>Refund Policy</a>
+    <a href="order.html" class="mobile-cta"><span class="mnp-ico">🛒</span>Order Now</a>
+  </div>
+  <div class="mobile-footer">
+    Fresh fish and meat, delivered with trust and freshness.
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-eyebrow">Legal</div>
+    <h1>Refund &amp; Cancellation Policy</h1>
+    <p>What to do if something's wrong with your order, and how refunds and cancellations work.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="updated-note">Last updated: 29 July 2026</div>
+  <div class="policy-card">
+
+    <h2>1. Our Promise</h2>
+    <p>Because we sell fresh fish, chicken, and mutton cut to order, we're not able to accept returns of delivered products for hygiene reasons. Instead, we focus on making sure any genuine issue is fixed quickly — through a replacement, partial refund, or full refund, depending on the situation.</p>
+
+    <h2>2. Cancelling an Order</h2>
+    <ul>
+      <li>You can cancel free of charge any time before we begin preparing your order (cutting/cleaning/packing).</li>
+      <li>To cancel, message us on <a class="inline-link" href="https://wa.me/918431083956" target="_blank" rel="noopener">WhatsApp</a> or call <a class="inline-link" href="tel:+918431083956">+91 84310 83956</a> as soon as possible with your order details.</li>
+      <li>Once an order has been prepared or is out for delivery, it can no longer be cancelled.</li>
+    </ul>
+
+    <h2>3. When a Refund Applies</h2>
+    <p>We will offer a replacement or refund if:</p>
+    <ul>
+      <li>The item delivered does not match what you ordered (wrong item, wrong cut, or incorrect quantity).</li>
+      <li>The product arrives visibly spoiled, off-smelling, or not fresh.</li>
+      <li>The packaging has been damaged or opened in a way that compromises hygiene.</li>
+      <li>The order arrives significantly late without prior communication, and you no longer wish to accept it.</li>
+    </ul>
+
+    <h2>4. When a Refund Does Not Apply</h2>
+    <ul>
+      <li>Change of mind after the order has been prepared or delivered.</li>
+      <li>Natural variation in weight, size, or appearance that comes with fresh, uncut produce.</li>
+      <li>Delays caused by an incorrect address or the customer being unavailable at delivery.</li>
+      <li>Issues reported more than <strong>2 hours</strong> after delivery, since freshness cannot be verified after that window.</li>
+    </ul>
+
+    <h2>5. How to Report an Issue</h2>
+    <p>Contact us within <strong>2 hours of delivery</strong> with your order details and, where possible, a photo of the product. This helps us verify the issue quickly and resolve it the same day wherever we can.</p>
+    <ul>
+      <li>WhatsApp: <a class="inline-link" href="https://wa.me/918431083956" target="_blank" rel="noopener">+91 84310 83956</a></li>
+      <li>Call: <a class="inline-link" href="tel:+918431083956">+91 84310 83956</a></li>
+    </ul>
+
+    <h2>6. Refund Process &amp; Timeline</h2>
+    <p>Once an issue is verified, we will offer either a free replacement on the next available delivery slot, or a refund to your original payment method. Refunds for online/UPI payments are typically processed within <strong>3–5 business days</strong>. Cash on Delivery refunds are settled via UPI transfer within the same window.</p>
+
+    <h2>7. Order Not Delivered</h2>
+    <p>If your order was paid for in advance and could not be delivered for any reason on our end, you will receive a full refund.</p>
+
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Any changes will be posted on this page with a revised "Last updated" date.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>For any refund or cancellation request, reach us at <a class="inline-link" href="tel:+918431083956">+91 84310 83956</a> or via <a class="inline-link" href="https://wa.me/918431083956" target="_blank" rel="noopener">WhatsApp</a>.</p>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Saha Fin — Fresh, honest, and on time, every order. &nbsp;·&nbsp;
+  <a href="https://wa.me/918431083956" target="_blank" rel="noopener">Chat on WhatsApp</a>
+</footer>
+
+<div class="quick-actions">
+  <button class="qa-btn qa-top" id="qaTop" aria-label="Back to top">&#8593;</button>
+</div>
+<div class="mobile-order-bar">
+  <a href="tel:+918431083956" class="mob-call">&#128222; Call Now</a>
+  <a href="order.html" class="mob-order">Order Now</a>
+</div>
+
+<script>
+(function(){
+  const toggle=document.getElementById('menuToggle');
+  const overlay=document.getElementById('mobileNavOverlay');
+  const panel=document.getElementById('mobileNavPanel');
+  const closeBtn=document.getElementById('closeMenu');
+  if(!toggle||!overlay||!panel) return;
+  function closeMenu(){
+    toggle.classList.remove('active');
+    overlay.classList.remove('active');
+    panel.classList.remove('active');
+    document.body.classList.remove('nav-open');
+  }
+  function openMenu(){
+    toggle.classList.add('active');
+    overlay.classList.add('active');
+    panel.classList.add('active');
+    document.body.classList.add('nav-open');
+  }
+  toggle.addEventListener('click',()=>{ panel.classList.contains('active') ? closeMenu() : openMenu(); });
+  overlay.addEventListener('click',closeMenu);
+  if(closeBtn) closeBtn.addEventListener('click',closeMenu);
+  panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+})();
+</script>
+
+<script>
+(function(){
+  const btn = document.getElementById('contactDropdownBtn');
+  const menu = document.getElementById('contactDropdownMenu');
+  if(!btn || !menu) return;
+  function close(){ menu.classList.remove('open'); btn.classList.remove('open'); }
+  function toggle(e){
+    e.stopPropagation();
+    const isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+  }
+  btn.addEventListener('click', toggle);
+  document.addEventListener('click', (e)=>{
+    if(!menu.contains(e.target) && e.target!==btn) close();
+  });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+})();
+</script>
+
+<script>
+(function(){
+  var topBtn=document.getElementById('qaTop');
+  if(!topBtn) return;
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>400){topBtn.classList.add('show');}else{topBtn.classList.remove('show');}
+  });
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
