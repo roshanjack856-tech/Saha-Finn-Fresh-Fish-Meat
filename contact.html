@@ -493,17 +493,20 @@ body.nav-open{overflow:hidden;}
   const btn = document.getElementById('contactDropdownBtn');
   const menu = document.getElementById('contactDropdownMenu');
   if(!btn || !menu) return;
+  function open(){ menu.classList.add('open'); btn.classList.add('open'); }
   function close(){ menu.classList.remove('open'); btn.classList.remove('open'); }
   function toggle(e){
     e.stopPropagation();
-    const isOpen = menu.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
+    menu.classList.contains('open') ? close() : open();
   }
   btn.addEventListener('click', toggle);
   document.addEventListener('click', (e)=>{
     if(!menu.contains(e.target) && e.target!==btn) close();
   });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+
+  // This is the Contact page itself — open the menu automatically on load.
+  window.addEventListener('DOMContentLoaded', open);
 })();
 </script>
 
